@@ -10,6 +10,9 @@ public class Lager {
 
     private int antalFade;
 
+    //Linkattrbiutter
+    private ArrayList<Fad> fade = new ArrayList<>();
+
     public Lager(String lokation, ArrayList ledigePladser, int antalFade) {
         this.lokation = lokation;
         this.ledigePladser = ledigePladser;
@@ -40,4 +43,25 @@ public class Lager {
     public void setAntalFade(int antalFade) {
         this.antalFade = antalFade;
     }
+
+    //Metoder til at vedligeholde forbindelsen til linkattributter
+    public ArrayList<Fad> getFade() {
+        return new ArrayList<>(fade);
+    }
+
+    public void addFad(Fad fad) {
+        if(!fade.contains(fad)) {
+            fade.add(fad);
+            fad.addLager(this);
+        }
+    }
+
+    public void removeFad(Fad fad) {
+        if(fade.contains(fad)) {
+            fade.remove(fad);
+            fad.removeLager(this);
+        }
+    }
+
+
 }

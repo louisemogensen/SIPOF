@@ -48,4 +48,8 @@ public class Fad {
     public void setErFadFyldt(boolean erFadFyldt) {
         this.erFadFyldt = erFadFyldt;
     }
+
+    //Metoder til at vedligeholde forbindelsen til linkattributter
+
+
 }

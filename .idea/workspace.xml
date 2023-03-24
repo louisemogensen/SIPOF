@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/SallWhiskeyDistellery.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +36,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Oprettelse af tre-lagsarkitektur" />
     <MESSAGE value="Oprettelse af modelklasser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oprettelse af modelklasser" />
+    <MESSAGE value="Attributter, constructor og get- og setmetoder for modelklasserne" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attributter, constructor og get- og setmetoder for modelklasserne" />
   </component>
 </project>
