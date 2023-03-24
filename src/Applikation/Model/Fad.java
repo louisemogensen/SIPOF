@@ -1,4 +1,4 @@
 package Applikation.Model;
 
-public class hej {
+public class Fad {
 }
