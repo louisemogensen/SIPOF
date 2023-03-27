@@ -63,7 +63,7 @@ public class Lager {
         return plads;
     }
 
-    public void removePlads(Plads plads) {
+    public void sletPlads(Plads plads) {
         if(pladser.contains(plads)) {
             pladser.remove(plads);
         }

@@ -2,7 +2,7 @@ package Applikation.Model;
 
 public class Fad {
 
-    private String fadetype;
+    private String fadtype;
     private int fadnummer;
     private boolean erFadFyldt;
 
@@ -10,18 +10,18 @@ public class Fad {
 
     private Plads plads;
 
-    public Fad(String fadetype, int fadnummer, boolean erFadFyldt) {
-        this.fadetype = fadetype;
+    public Fad(String fadtype, int fadnummer, boolean erFadFyldt) {
+        this.fadtype = fadtype;
         this.fadnummer = fadnummer;
         this.erFadFyldt = erFadFyldt;
     }
 
-    public String getFadetype() {
-        return fadetype;
+    public String getFadtype() {
+        return fadtype;
     }
 
-    public void setFadetype(String fadetype) {
-        this.fadetype = fadetype;
+    public void setFadtype(String fadtype) {
+        this.fadtype = fadetype;
     }
 
     public int getFadnummer() {
