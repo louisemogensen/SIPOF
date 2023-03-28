@@ -4,9 +4,6 @@
     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Storage/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,7 @@
     <MESSAGE value="Attributter, constructor og get- og setmetoder for modelklasserne" />
     <MESSAGE value="Linkattributter" />
     <MESSAGE value="Ændringer i modelpakken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i modelpakken" />
+    <MESSAGE value="Ændringer i Controller og Storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i Controller og Storage" />
   </component>
 </project>
