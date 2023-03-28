@@ -55,6 +55,15 @@ public class Controller {
         plads.setPladsnummer(pladsnummer);
         plads.setLager(lager);
     }
+/*
+    public static void initContent() {
+        Fad fad = new Fad("Cherry", 1, true);
+        Lager lager1 = new Lager("Sall Whiskey Distellery", 60, 40, 100);
+        Plads plads = new Plads(1, 1, lager1);
+        fad.setPlads(plads);
 
+
+    }
+*/
 
 }

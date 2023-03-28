@@ -57,13 +57,13 @@ public class Lager {
         return new ArrayList<>(pladser);
     }
 
-    public Plads opretPlads(int hyldenummer, int pladsnummer, Lager lager) {
+    public Plads createPlads(int hyldenummer, int pladsnummer, Lager lager) {
         Plads plads = new Plads(hyldenummer, pladsnummer, lager);
         pladser.add(plads);
         return plads;
     }
 
-    public void sletPlads(Plads plads) {
+    public void deltetePlads(Plads plads) {
         if(pladser.contains(plads)) {
             pladser.remove(plads);
         }
