@@ -7,8 +7,8 @@ import Storage.Storage;
 
 public class Controller {
 
-    public static Fad createFad(String fadtype, int fadnummer, boolean erFadFyldt) {
-        Fad fad = new Fad(fadtype, fadnummer, erFadFyldt);
+    public static Fad createFad(String fadtype, String fadleverandør, int fadnummer, boolean erFadFyldt) {
+        Fad fad = new Fad(fadtype, fadleverandør, fadnummer, erFadFyldt);
         Storage.addFad(fad);
         return fad;
     }

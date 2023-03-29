@@ -23,7 +23,7 @@ public class Fad {
     }
 
     public void setFadtype(String fadtype) {
-        this.fadtype = fadetype;
+        this.fadtype = fadtype;
     }
 
     public String getFadleverandør() {
@@ -68,5 +68,11 @@ public class Fad {
             }
         }
 
+    }
+
+    public void removePlads(Plads plads) {
+    }
+
+    public void addPlads(Plads plads) {
     }
 }

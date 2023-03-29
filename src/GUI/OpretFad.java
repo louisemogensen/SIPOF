@@ -70,7 +70,21 @@ public class OpretFad extends Application {
         pane.add(btnAnnuller, 3,5);
         pane.add(btnOpretFad, 4,5);
 
+        // connect a method to the button
+
+        btnOpretFad.setOnAction(event -> this.saveAction());
     }
+
+    private void saveAction() {
+        if (studerende != null) {
+            studerende.setName(txfName.getText().trim());
+            studerende.setActive(chkActive.isSelected());
+            clearFields();
+            txAInf.setText(getDescription());
+            btnSave.setDisable(true);
+            btnDelete.setDisable(true);
+            btnGet.setDisable(false);
+        }
 
 
 }
