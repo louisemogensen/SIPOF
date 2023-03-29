@@ -21,7 +21,7 @@ public class Fad {
     }
 
     public void setFadtype(String fadtype) {
-        this.fadtype = fadetype;
+        this.fadtype = fadtype;
     }
 
     public int getFadnummer() {
@@ -58,5 +58,11 @@ public class Fad {
             }
         }
 
+    }
+
+    public void removePlads(Plads plads) {
+    }
+
+    public void addPlads(Plads plads) {
     }
 }

@@ -58,4 +58,10 @@ public class Plads {
         }
 
     }
+
+    public void removeFad(Fad fad) {
+    }
+
+    public void addFad(Fad fad) {
+    }
 }
