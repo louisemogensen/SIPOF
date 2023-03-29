@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
+    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="Oprettelse af tre-lagsarkitektur">
+      <change afterPath="$PROJECT_DIR$/src/GUI/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/RegisrerWhisky.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/VæskerPåFade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SIPOF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SIPOF.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +34,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="GUI" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Oprettelse af tre-lagsarkitektur" />
     <MESSAGE value="Oprettelse af modelklasser" />
