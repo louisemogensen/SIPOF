@@ -3,6 +3,7 @@ package Applikation.Model;
 public class Fad {
 
     private String fadtype;
+    private String fadleverandør;
     private int fadnummer;
     private boolean erFadFyldt;
 
@@ -10,8 +11,9 @@ public class Fad {
 
     private Plads plads;
 
-    public Fad(String fadtype, int fadnummer, boolean erFadFyldt) {
+    public Fad(String fadtype, String fadleverandør, int fadnummer, boolean erFadFyldt) {
         this.fadtype = fadtype;
+        this.fadleverandør = fadleverandør;
         this.fadnummer = fadnummer;
         this.erFadFyldt = erFadFyldt;
     }
@@ -21,7 +23,15 @@ public class Fad {
     }
 
     public void setFadtype(String fadtype) {
-        this.fadtype = fadtype;
+        this.fadtype = fadetype;
+    }
+
+    public String getFadleverandør() {
+        return fadleverandør;
+    }
+
+    public void setFadleverandør(String fadleverandør) {
+        this.fadleverandør = fadleverandør;
     }
 
     public int getFadnummer() {
@@ -58,11 +68,5 @@ public class Fad {
             }
         }
 
-    }
-
-    public void removePlads(Plads plads) {
-    }
-
-    public void addPlads(Plads plads) {
     }
 }
