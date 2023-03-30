@@ -8,7 +8,7 @@ public class Lager {
     private int maxAntalPladser;
 
     //Linkattribut
-    private ArrayList<Plads> pladser = new ArrayList<>();
+    private final ArrayList<Plads> pladser = new ArrayList<>();
 
     public Lager(String lokation, int maxAntalFade) {
         this.lokation = lokation;
@@ -37,17 +37,14 @@ public class Lager {
         return new ArrayList<>(pladser);
     }
 
-    public Plads createPlads(int hyldenummer, int pladsnummer) {
-        Plads plads = new Plads(hyldenummer, pladsnummer);
-        plads.setLager(this);
+    public Plads createPlads(int reolnummer, int pladsnummer) {
+        Plads plads = new Plads(reolnummer, pladsnummer, this);
         pladser.add(plads);
         return plads;
     }
 
-    public void deletePlads(Plads plads) {
-        if(pladser.contains(plads)) {
-            pladser.remove(plads);
-        }
+    public void removePlads(Plads plads) {
+        pladser.remove(plads); //remove indeholder selv en contains-tjekker
     }
 
     //------------------------------------

@@ -41,16 +41,14 @@ public class Controller {
 
     //------------------------------------------------------------------------------
 
-    public static Plads createPlads(int hyldenummer, int pladsnummer, Lager lager) {
-        Plads plads = new Plads(hyldenummer,pladsnummer);
-        Storage.addPlads(plads);
-        return plads;
+    public static void createPlads(int reolnummer, int pladsnummer, Lager lager) {
+        lager.createPlads(reolnummer, pladsnummer);
     }
 
     public static void deletePlads(Plads plads) {Storage.removePlads(plads);}
 
-    public static void updatePlads(Plads plads, int hyldenummer, int pladsnummer, Lager lager) {
-        plads.setHyldenummer(hyldenummer);
+    public static void updatePlads(Plads plads, int reolnummer, int pladsnummer, Lager lager) {
+        plads.setReolnummer(reolnummer);
         plads.setPladsnummer(pladsnummer);
         plads.setLager(lager);
     }
@@ -72,9 +70,12 @@ public class Controller {
 
     //------------------------------------------------------------------------------
 
-    public List<Plads> getPladser() { return Storage.getPlads(); }
+    public static List<Plads> getPladser() { return Storage.getPlads(); }
 
-    public void initContent() {
+    public static void initContent() {
+
+        // Version 1.0 start
+
         Lager lager1 = createLager("SWD",20);
         Lager lager2 = createLager("Hos landmand", 100);
 
@@ -86,6 +87,8 @@ public class Controller {
         Fad fad = new Fad("Cherry", 1, "Himmeriggården");
 
         fad.setPlads(plads1);
+
+        // Version 1.0 slut
     }
 
 

@@ -2,24 +2,28 @@ package Applikation.Model;
 
 public class Plads {
 
-    private int hyldenummer;
+    private int reolnummer;
     private int pladsnummer;
 
     //Linkattributter
     private Lager lager;
     private Fad fad;
 
-    public Plads(int hyldenummer, int pladsnummer) {
-        this.hyldenummer = hyldenummer;
+    //constructoren er protected, da klassesammenhængen til Lager er en komposition.
+    // Det er derfor kun Lager, der må oprette pladser.
+    protected Plads(int reolnummer, int pladsnummer, Lager lager) {
+        this.reolnummer = reolnummer;
         this.pladsnummer = pladsnummer;
+        this.lager = lager;
+        // Plads har ikke Lager med i constructoren, da Lager har metoden createPlads
     }
 
-    public int getHyldenummer() {
-        return hyldenummer;
+    public int getReolnummer() {
+        return reolnummer;
     }
 
-    public void setHyldenummer(int hyldenummer) {
-        this.hyldenummer = hyldenummer;
+    public void setReolnummer(int reolnummer) {
+        this.reolnummer = reolnummer;
     }
 
     public int getPladsnummer() {

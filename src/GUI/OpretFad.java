@@ -10,22 +10,22 @@ import javafx.scene.layout.GridPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OpretFad extends Application {
 
+
+    @Override
     public void start(Stage stage) {
         stage.setTitle("SIPOF");
         GridPane pane = new GridPane();
+        System.out.println("Test1");
         this.initContent(pane);
-
+        System.out.println("Test2");
         Scene scene = new Scene(pane);
         stage.setScene(scene);
+        System.out.println("Test3");
         stage.show();
     }
 
@@ -36,7 +36,7 @@ public class OpretFad extends Application {
     private TextField txfOpretFadnummer = new TextField();
 
     //Drop down comboBox
-    private ComboBox<Plads> lstHylde = new ComboBox<Plads>();
+    private ComboBox<Plads> lstReol = new ComboBox<Plads>();
 
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
@@ -45,9 +45,10 @@ public class OpretFad extends Application {
     private Fad fade = null;
     private Controller controller;
 
-    public OpretFad(Controller controller) {
+    /*public OpretFad(Controller controller) {
         this.controller = controller;
     }
+     */
 
     //Pane
     private void initContent(GridPane pane) {
@@ -73,12 +74,12 @@ public class OpretFad extends Application {
         pane.add(txfOpretFadnummer, 1, 4, 1, 1);
 
 
-        lstHylde.getItems().setAll(controller.getPladser());
-        lstHylde.setOnAction(event -> {Plads valgtPlads = lstHylde.getValue();
+        lstReol.getItems().setAll(Controller.getPladser());
+        lstReol.setOnAction(event -> {Plads valgtPlads = lstReol.getValue();
         fade.setPlads(valgtPlads);});
-        Label lblHylde = new Label("Placer på hylde nr.:");
-        pane.add(lblHylde, 2, 2);
-        pane.add(lstHylde, 3, 2);
+        Label lblReol = new Label("Placer på reol nr.:");
+        pane.add(lblReol, 2, 2);
+        pane.add(lstReol, 3, 2);
 
 
         pane.add(btnAnnuller, 3, 5);
