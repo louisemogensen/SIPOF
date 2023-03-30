@@ -9,9 +9,7 @@ public class Plads {
     private Lager lager;
     private Fad fad;
 
-    Plads[] pladser = new Plads[100];
-
-    public Plads(int hyldenummer, int pladsnummer, Lager lager) {
+    public Plads(int hyldenummer, int pladsnummer) {
         this.hyldenummer = hyldenummer;
         this.pladsnummer = pladsnummer;
         this.lager = lager;
@@ -59,7 +57,7 @@ public class Plads {
                 fad.setPlads(this); //opdaterer linkattributtet i fad-objektet
                 return true; //returner true for at angive, at fadet blev tilføjet
             } else {
-                return false; //returnerer false for at angive, at pladsen allerede er optaget
+                return false; // returnerer false for at angive, at pladsen allerede er optaget
             }
         }
 

@@ -6,7 +6,6 @@ public class Fad {
 
     private String fadtype;
     private int fadnummer;
-    private boolean erFadFyldt;
     private String fadleverandør;
 
     // Linkattributter
@@ -15,12 +14,10 @@ public class Fad {
     private Plads plads;
     private ArrayList<Whiskey> whiskeyArrayList = new ArrayList<>();
 
-    public Fad(String fadtype, int fadnummer, boolean erFadFyldt, String fadleverandør, Destillering destillering) {
+    public Fad(String fadtype, int fadnummer,  String fadleverandør) {
         this.fadtype = fadtype;
         this.fadnummer = fadnummer;
-        this.erFadFyldt = erFadFyldt;
         this.fadleverandør = fadleverandør;
-        this.destillering = destillering;
     }
 
     public String getFadtype() {
@@ -37,14 +34,6 @@ public class Fad {
 
     public void setFadnummer(int fadnummer) {
         this.fadnummer = fadnummer;
-    }
-
-    public boolean isErFadFyldt() {
-        return erFadFyldt;
-    }
-
-    public void setErFadFyldt(boolean erFadFyldt) {
-        this.erFadFyldt = erFadFyldt;
     }
 
     public String getFadleverandør() {
