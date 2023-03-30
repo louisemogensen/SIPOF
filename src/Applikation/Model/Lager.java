@@ -5,18 +5,14 @@ import java.util.ArrayList;
 public class Lager {
 
     private String lokation;
-    private int ledigepladser;
-    private int antalFade;
-    private int maxAntalFade;
+    private int maxAntalPladser;
 
     //Linkattribut
     private ArrayList<Plads> pladser = new ArrayList<>();
 
-    public Lager(String lokation, int ledigepladser, int antalFade, int maxAntalFade) {
+    public Lager(String lokation, int maxAntalFade) {
         this.lokation = lokation;
-        this.ledigepladser = ledigepladser;
-        this.antalFade = antalFade;
-        this.maxAntalFade = maxAntalFade;
+        this.maxAntalPladser = maxAntalFade;
     }
 
     public String getLokation() {
@@ -27,28 +23,12 @@ public class Lager {
         this.lokation = lokation;
     }
 
-    public int getLedigepladser() {
-        return ledigepladser;
+    public int getMaxAntalPladser() {
+        return maxAntalPladser;
     }
 
-    public void setLedigepladser(int ledigepladser) {
-        this.ledigepladser = ledigepladser;
-    }
-
-    public int getAntalFade() {
-        return antalFade;
-    }
-
-    public void setAntalFade(int antalFade) {
-        this.antalFade = antalFade;
-    }
-
-    public int getMaxAntalFade() {
-        return maxAntalFade;
-    }
-
-    public void setMaxAntalFade(int maxAntalFade) {
-        this.maxAntalFade = maxAntalFade;
+    public void setMaxAntalPladser(int maxAntalPladser) {
+        this.maxAntalPladser = maxAntalPladser;
     }
 
     //Metoder til at vedligeholde forbindelsen til linkattribut
@@ -57,8 +37,9 @@ public class Lager {
         return new ArrayList<>(pladser);
     }
 
-    public Plads createPlads(int hyldenummer, int pladsnummer, Lager lager) {
-        Plads plads = new Plads(hyldenummer, pladsnummer, lager);
+    public Plads createPlads(int hyldenummer, int pladsnummer) {
+        Plads plads = new Plads(hyldenummer, pladsnummer);
+        plads.setLager(this);
         pladser.add(plads);
         return plads;
     }

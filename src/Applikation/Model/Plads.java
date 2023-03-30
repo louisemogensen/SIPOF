@@ -9,7 +9,7 @@ public class Plads {
     private Lager lager;
     private Fad fad;
 
-    public Plads(int hyldenummer, int pladsnummer, Lager lager) {
+    public Plads(int hyldenummer, int pladsnummer) {
         this.hyldenummer = hyldenummer;
         this.pladsnummer = pladsnummer;
         this.lager = lager;
