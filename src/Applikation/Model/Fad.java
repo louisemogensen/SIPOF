@@ -1,21 +1,26 @@
 package Applikation.Model;
 
+import java.util.ArrayList;
+
 public class Fad {
 
     private String fadtype;
-    private String fadleverandør;
     private int fadnummer;
     private boolean erFadFyldt;
+    private String fadleverandør;
 
-    //Linkattribut
+    // Linkattributter
 
+    private Destillering destillering;
     private Plads plads;
+    private ArrayList<Whiskey> whiskeyArrayList = new ArrayList<>();
 
-    public Fad(String fadtype, String fadleverandør, int fadnummer, boolean erFadFyldt) {
+    public Fad(String fadtype, int fadnummer, boolean erFadFyldt, String fadleverandør, Destillering destillering) {
         this.fadtype = fadtype;
-        this.fadleverandør = fadleverandør;
         this.fadnummer = fadnummer;
         this.erFadFyldt = erFadFyldt;
+        this.fadleverandør = fadleverandør;
+        this.destillering = destillering;
     }
 
     public String getFadtype() {
@@ -24,14 +29,6 @@ public class Fad {
 
     public void setFadtype(String fadtype) {
         this.fadtype = fadtype;
-    }
-
-    public String getFadleverandør() {
-        return fadleverandør;
-    }
-
-    public void setFadleverandør(String fadleverandør) {
-        this.fadleverandør = fadleverandør;
     }
 
     public int getFadnummer() {
@@ -50,7 +47,24 @@ public class Fad {
         this.erFadFyldt = erFadFyldt;
     }
 
-    //Metoder til at vedligeholde forbindelsen til linkattribut
+    public String getFadleverandør() {
+        return fadleverandør;
+    }
+
+    public void setFadleverandør(String fadleverandør) {
+        this.fadleverandør = fadleverandør;
+    }
+
+    // Metoder til at vedligeholde forbindelsen til linkattributter
+
+
+    public Destillering getDestillering() {
+        return destillering;
+    }
+
+    public void setDestillering(Destillering destillering) {
+        this.destillering = destillering;
+    }
 
     public Plads getPlads() {
         return plads;
@@ -58,21 +72,29 @@ public class Fad {
 
     public void setPlads(Plads plads) {
         if(this.plads != plads) {
-            Plads oldPlads = this.plads;
-            if(oldPlads != null) {
-                oldPlads.removeFad(this); // ???
-            }
             this.plads = plads;
-            if(plads != null) {
-                plads.addFad(this);  // ???
-            }
         }
-
     }
 
-    public void removePlads(Plads plads) {
+    public ArrayList<Whiskey> getWhiskeyArrayList() {
+        return whiskeyArrayList;
     }
 
-    public void addPlads(Plads plads) {
+    public void setWhiskeyArrayList(ArrayList<Whiskey> whiskeyArrayList) {
+        this.whiskeyArrayList = whiskeyArrayList;
+    }
+
+    public void addWhiskey(Whiskey whiskey) {
+        if(!whiskeyArrayList.contains(whiskey)) {
+            whiskeyArrayList.add(whiskey);
+            whiskey.setFad(this);
+        }
+    }
+
+    public void removeWhiskey(Whiskey whiskey) {
+        if(whiskeyArrayList.contains(whiskey)) {
+            whiskeyArrayList.remove(whiskey);
+            whiskey.setFad(null);
+        }
     }
 }
