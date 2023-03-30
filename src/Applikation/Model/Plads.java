@@ -32,7 +32,6 @@ public class Plads {
     }
 
     //Metoder til at vedligeholde forbindelsen til linkattributter
-
     public Lager getLager() {
         return lager;
     }
@@ -53,12 +52,12 @@ public class Plads {
 
     //----------------------------------------
         public boolean tilføjFad(Fad fad) {
-            if (this.fad == null) { // check, at der ikke allerede er et fad på pladsen
+            if (this.fad == null) { //check, at der ikke allerede er et fad på pladsen
                 this.fad = fad;
-                fad.setPlads(this); // opdater linkattributtet i Fad-objektet
-                return true; // returner true for at angive, at fadet blev tilføjet
+                fad.setPlads(this); //opdaterer linkattributtet i fad-objektet
+                return true; //returner true for at angive, at fadet blev tilføjet
             } else {
-                return false; // returner false for at angive, at pladsen allerede er optaget
+                return false; // returnerer false for at angive, at pladsen allerede er optaget
             }
         }
 

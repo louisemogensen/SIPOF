@@ -1,5 +1,6 @@
 package Applikation.Controller;
 
+import Applikation.Model.Destillering;
 import Applikation.Model.Fad;
 import Applikation.Model.Lager;
 import Applikation.Model.Plads;
@@ -9,8 +10,8 @@ import java.util.List;
 
 public class Controller {
 
-    public static Fad createFad(String fadtype, String fadleverandør, int fadnummer, boolean erFadFyldt) {
-        Fad fad = new Fad(fadtype, fadleverandør, fadnummer, erFadFyldt);
+    public static Fad createFad(String fadtype, int fadnummer, boolean erFadFyldt, String fadleverandør, Destillering destillering) {
+        Fad fad = new Fad(fadtype, fadnummer, erFadFyldt, fadleverandør, destillering);
         Storage.addFad(fad);
         return fad;
     }

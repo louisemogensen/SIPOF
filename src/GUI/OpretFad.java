@@ -42,11 +42,12 @@ public class OpretFad extends Application {
     private Button btnOpretFad = new Button("Opret fad");
     private Button btnAnnuller = new Button("Annuller");
 
-    //Text area
-    private final TextArea txAInf = new TextArea();
-
     private Fad fade = null;
     private Controller controller;
+
+    public OpretFad(Controller controller) {
+        this.controller = controller;
+    }
 
     //Pane
     private void initContent(GridPane pane) {
