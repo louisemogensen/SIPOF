@@ -5,6 +5,8 @@ import Applikation.Model.Lager;
 import Applikation.Model.Plads;
 import Storage.Storage;
 
+import java.util.List;
+
 public class Controller {
 
     public static Fad createFad(String fadtype, String fadleverandør, int fadnummer, boolean erFadFyldt) {
@@ -55,6 +57,8 @@ public class Controller {
         plads.setPladsnummer(pladsnummer);
         plads.setLager(lager);
     }
+
+    public List<Plads> getPladser() { return Storage.getPlads(); }
 /*
     public static void initContent() {
         Fad fad = new Fad("Cherry", 1, true);

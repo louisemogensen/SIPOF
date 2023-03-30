@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="Ændringer i Fad og Plads">
+    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="Ændringer i Fad, Plads og OpretFad">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SIPOF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SIPOF.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/OpretFad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,15 +31,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/kamil/Downloads/openjfx-18.0.2_windows-x64_bin-sdk/javafx-sdk-18.0.2/lib/javafx.graphics.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="GUI" />
@@ -61,6 +65,7 @@
     <MESSAGE value="Linkattributter" />
     <MESSAGE value="Ændringer i modelpakken" />
     <MESSAGE value="Ændringer i Controller og Storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i Controller og Storage" />
+    <MESSAGE value="Ændringer i Fad, Plads og OpretFad" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i Fad, Plads og OpretFad" />
   </component>
 </project>
