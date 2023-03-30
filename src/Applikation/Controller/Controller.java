@@ -1,11 +1,9 @@
 package Applikation.Controller;
 
-import Applikation.Model.Destillering;
-import Applikation.Model.Fad;
-import Applikation.Model.Lager;
-import Applikation.Model.Plads;
+import Applikation.Model.*;
 import Storage.Storage;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Controller {
@@ -26,7 +24,7 @@ public class Controller {
         fad.setErFadFyldt(erFadFyldt);
     }
 
-    //------
+    //------------------------------------------------------------------------------
 
     public static Lager createLager(String lokation, int ledigepladser, int antalFade, int maxAntalFade) {
         Lager lager = new Lager(lokation, ledigepladser, antalFade, maxAntalFade);
@@ -43,7 +41,7 @@ public class Controller {
         lager.setMaxAntalFade(maxAntalFade);
     }
 
-    //-----
+    //------------------------------------------------------------------------------
 
     public static Plads createPlads(int hyldenummer, int pladsnummer, Lager lager) {
         Plads plads = new Plads(hyldenummer,pladsnummer,lager);
@@ -59,16 +57,26 @@ public class Controller {
         plads.setLager(lager);
     }
 
-    public List<Plads> getPladser() { return Storage.getPlads(); }
-/*
-    public static void initContent() {
-        Fad fad = new Fad("Cherry", 1, true);
-        Lager lager1 = new Lager("Sall Whiskey Distellery", 60, 40, 100);
-        Plads plads = new Plads(1, 1, lager1);
-        fad.setPlads(plads);
-
-
+    //------------------------------------------------------------------------------
+    public static Whiskey createWhiskey(double alkoholprocent, LocalDate påfyldningsdato, Fad fad) {
+        Whiskey whiskey = new Whiskey(alkoholprocent, påfyldningsdato, fad);
+        Storage.addWhiskey(whiskey);
+        return whiskey;
     }
-*/
+
+    public static void deleteWhiskey(Whiskey whiskey) {Storage.removeWhiskey(whiskey);}
+
+    public static void updateWhiskey(Whiskey whiskey, double alkoholprocent, LocalDate påfyldningsdato, Fad fad) {
+        whiskey.setAlkoholprocent(alkoholprocent);
+        whiskey.setPåfyldningsdato(påfyldningsdato);
+        whiskey.setFad(fad);
+    }
+
+    //------------------------------------------------------------------------------
+
+    public List<Plads> getPladser() { return Storage.getPlads(); }
+
+
+
 
 }
