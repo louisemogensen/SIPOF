@@ -15,7 +15,6 @@ public class Plads {
         this.reolnummer = reolnummer;
         this.pladsnummer = pladsnummer;
         this.lager = lager;
-        // Plads har ikke Lager med i constructoren, da Lager har metoden createPlads
     }
 
     public int getReolnummer() {

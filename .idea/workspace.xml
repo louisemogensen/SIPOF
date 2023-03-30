@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +85,7 @@
     <MESSAGE value="Ændringer i Storage og Controller" />
     <MESSAGE value="Ændringer i modelklasserne" />
     <MESSAGE value="Ændringer i samtlige klasser (30/3 kl. 18.49)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i samtlige klasser (30/3 kl. 18.49)" />
+    <MESSAGE value="Ændringer i samtlige klasser (30/3 kl. 19.06)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i samtlige klasser (30/3 kl. 19.06)" />
   </component>
 </project>
