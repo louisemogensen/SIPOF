@@ -12,7 +12,6 @@ public class Plads {
     public Plads(int hyldenummer, int pladsnummer) {
         this.hyldenummer = hyldenummer;
         this.pladsnummer = pladsnummer;
-        this.lager = lager;
     }
 
     public int getHyldenummer() {
@@ -48,21 +47,6 @@ public class Plads {
         if (this.fad != fad) {
             this.fad = fad;
         }
-    }
-
-    //----------------------------------------
-        public boolean tilføjFad(Fad fad) {
-            if (this.fad == null) { //check, at der ikke allerede er et fad på pladsen
-                this.fad = fad;
-                fad.setPlads(this); //opdaterer linkattributtet i fad-objektet
-                return true; //returner true for at angive, at fadet blev tilføjet
-            } else {
-                return false; // returnerer false for at angive, at pladsen allerede er optaget
-            }
-        }
-
-    public boolean erOptaget() {
-        return fad != null;
     }
 
     public void removeFad(Fad fad) {
