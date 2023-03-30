@@ -47,14 +47,7 @@ public class Plads {
 
     public void setFad(Fad fad) {
         if (this.fad != fad) {
-            Fad oldFad = this.fad;
-            if (oldFad != null) {
-                oldFad.removePlads(this);
-            }
             this.fad = fad;
-            if (fad != null) {
-                fad.addPlads(this);
-            }
         }
     }
 
