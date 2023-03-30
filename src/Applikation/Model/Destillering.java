@@ -1,15 +1,15 @@
 package Applikation.Model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Destillering {
 
-    private LocalDate startdato;
-    private LocalDate slutdato;
+    private LocalDateTime startdato;
+    private LocalDateTime slutdato;
     private String maltbatch;
     private String kornsort;
-    private String medarbejdeR;
+    private String medarbejder;
     private double mængdevæske;
     private double alkoholprocent;
     private String rygemateriale;
@@ -18,31 +18,31 @@ public class Destillering {
     // Linkattribut
     private ArrayList<Fad> fade = new ArrayList<>();
 
-    public Destillering(LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejdeR, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+    public Destillering(LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejdeR, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
         this.startdato = startdato;
         this.slutdato = slutdato;
         this.maltbatch = maltbatch;
         this.kornsort = kornsort;
-        this.medarbejdeR = medarbejdeR;
+        this.medarbejder = medarbejdeR;
         this.mængdevæske = mængdevæske;
         this.alkoholprocent = alkoholprocent;
         this.rygemateriale = rygemateriale;
         this.kommentar = kommentar;
     }
 
-    public LocalDate getStartdato() {
+    public LocalDateTime getStartdato() {
         return startdato;
     }
 
-    public void setStartdato(LocalDate startdato) {
+    public void setStartdato(LocalDateTime startdato) {
         this.startdato = startdato;
     }
 
-    public LocalDate getSlutdato() {
+    public LocalDateTime getSlutdato() {
         return slutdato;
     }
 
-    public void setSlutdato(LocalDate slutdato) {
+    public void setSlutdato(LocalDateTime slutdato) {
         this.slutdato = slutdato;
     }
 
@@ -62,12 +62,12 @@ public class Destillering {
         this.kornsort = kornsort;
     }
 
-    public String getMedarbejdeR() {
-        return medarbejdeR;
+    public String getMedarbejder() {
+        return medarbejder;
     }
 
-    public void setMedarbejdeR(String medarbejdeR) {
-        this.medarbejdeR = medarbejdeR;
+    public void setMedarbejder(String medarbejder) {
+        this.medarbejder = medarbejder;
     }
 
     public double getMængdevæske() {

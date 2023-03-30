@@ -76,6 +76,10 @@ public class Controller {
 
     public List<Plads> getPladser() { return Storage.getPlads(); }
 
+    public void initContent() {
+
+    }
+
 
 
 
