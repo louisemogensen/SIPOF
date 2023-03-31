@@ -52,4 +52,9 @@ public class Plads {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Reolnummer " + reolnummer + " pladsnummer " + pladsnummer;
+    }
+
 }

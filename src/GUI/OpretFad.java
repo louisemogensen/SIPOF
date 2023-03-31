@@ -3,6 +3,7 @@ package GUI;
 import Applikation.Controller.Controller;
 import Applikation.Model.Fad;
 import Applikation.Model.Plads;
+import Storage.Storage;
 import javafx.geometry.Insets;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Button;
@@ -12,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 public class OpretFad extends Application {
 
@@ -45,10 +48,6 @@ public class OpretFad extends Application {
     private Fad fade = null;
     private Controller controller;
 
-    /*public OpretFad(Controller controller) {
-        this.controller = controller;
-    }
-     */
 
     //Pane
     private void initContent(GridPane pane) {
@@ -60,6 +59,8 @@ public class OpretFad extends Application {
         pane.setHgap(10);
         // set vertical gap between components
         pane.setVgap(10);
+
+        Controller.initContent();
 
         Label lblLeverandør = new Label("Leverandør:");
         pane.add(lblLeverandør, 0, 0);
@@ -73,14 +74,12 @@ public class OpretFad extends Application {
         pane.add(lblOpretFadnummer, 0, 4);
         pane.add(txfOpretFadnummer, 1, 4, 1, 1);
 
-
-        lstReol.getItems().setAll(Controller.getPladser());
-        lstReol.setOnAction(event -> {Plads valgtPlads = lstReol.getValue();
-        fade.setPlads(valgtPlads);});
+        lstReol.getItems().setAll(controller.getPladser());
+        //lstReol.setOnAction(event -> {Plads valgtPlads = lstReol.getValue();
+        //fade.setPlads(valgtPlads);});
         Label lblReol = new Label("Placer på reol nr.:");
         pane.add(lblReol, 2, 2);
         pane.add(lstReol, 3, 2);
-
 
         pane.add(btnAnnuller, 3, 5);
         pane.add(btnOpretFad, 4, 5);

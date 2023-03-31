@@ -3,7 +3,9 @@ package Applikation.Controller;
 import Applikation.Model.*;
 import Storage.Storage;
 
+import javax.swing.plaf.synth.ColorType;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
@@ -41,8 +43,10 @@ public class Controller {
 
     //------------------------------------------------------------------------------
 
-    public static void createPlads(int reolnummer, int pladsnummer, Lager lager) {
-        lager.createPlads(reolnummer, pladsnummer);
+    public static Plads createPlads(int reolnummer, int pladsnummer, Lager lager) {
+        Plads plads = lager.createPlads(reolnummer, pladsnummer);
+        Storage.addPlads(plads);
+        return plads;
     }
 
     public static void deletePlads(Plads plads) {Storage.removePlads(plads);}
@@ -79,14 +83,16 @@ public class Controller {
         Lager lager1 = createLager("SWD",20);
         Lager lager2 = createLager("Hos landmand", 100);
 
-        Plads plads1 = lager1.createPlads(1, 1);
-        Plads plads2 = lager1.createPlads(1, 2);
-        Plads plads3 = lager1.createPlads(1, 3);
-        Plads plads4 = lager1.createPlads(1, 4);
+        Plads plads1 = Controller.createPlads(1, 1, lager1);
+        Plads plads2 = Controller.createPlads(1, 2, lager1);
+        Plads plads3 = Controller.createPlads(1, 3, lager2);
+        Plads plads4 = Controller.createPlads(1, 4, lager2);
 
         Fad fad = new Fad("Cherry", 1, "Himmeriggården");
 
         fad.setPlads(plads1);
+
+        System.out.println(Storage.getPlads());
 
         // Version 1.0 slut
     }
