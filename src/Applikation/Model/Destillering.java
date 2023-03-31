@@ -18,12 +18,12 @@ public class Destillering {
     // Linkattribut
     private ArrayList<Fad> fade = new ArrayList<>();
 
-    public Destillering(LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejdeR, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+    public Destillering(LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
         this.startdato = startdato;
         this.slutdato = slutdato;
         this.maltbatch = maltbatch;
         this.kornsort = kornsort;
-        this.medarbejder = medarbejdeR;
+        this.medarbejder = medarbejder;
         this.mængdevæske = mængdevæske;
         this.alkoholprocent = alkoholprocent;
         this.rygemateriale = rygemateriale;

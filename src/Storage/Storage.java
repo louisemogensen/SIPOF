@@ -1,9 +1,6 @@
 package Storage;
 
-import Applikation.Model.Fad;
-import Applikation.Model.Lager;
-import Applikation.Model.Plads;
-import Applikation.Model.Whiskey;
+import Applikation.Model.*;
 
 import java.util.ArrayList;
 
@@ -13,6 +10,7 @@ public class Storage {
     public static ArrayList<Lager> lagre = new ArrayList<Lager>();
     public static ArrayList<Plads> pladser = new ArrayList<Plads>();
     public static ArrayList<Whiskey> whiskeyArrayList = new ArrayList<Whiskey>();
+    public static ArrayList<Destillering> destilleringArrayList = new ArrayList<Destillering>();
 
     //------------------------------------------------------------------------------
 
@@ -45,4 +43,12 @@ public class Storage {
     public static void addWhiskey(Whiskey whiskey) {whiskeyArrayList.add(whiskey);}
 
     public static void removeWhiskey(Whiskey whiskey) {whiskeyArrayList.remove(whiskey);}
+
+    //------------------------------------------------------------------------------
+
+    public static ArrayList<Destillering> getDestillering() {return new ArrayList<Destillering>(destilleringArrayList);}
+
+    public static void addDestillering(Destillering destillering) {destilleringArrayList.add(destillering);}
+
+    public static void removeDestillering(Destillering destillering) {destilleringArrayList.remove(destillering);}
 }

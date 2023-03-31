@@ -5,6 +5,7 @@ import Storage.Storage;
 
 import javax.swing.plaf.synth.ColorType;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +71,27 @@ public class Controller {
         whiskey.setAlkoholprocent(alkoholprocent);
         whiskey.setPåfyldningsdato(påfyldningsdato);
         whiskey.setFad(fad);
+    }
+
+    //------------------------------------------------------------------------------
+    public static Destillering createDestillering(LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+        Destillering destillering = new Destillering(startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
+        Storage.addDestillering(destillering);
+        return destillering;
+    }
+
+    public static void deleteDestillering(Destillering destillering) {Storage.removeDestillering(destillering);}
+
+    public static void updateDestillering(Destillering destillering, LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+        destillering.setStartdato(startdato);
+        destillering.setSlutdato(slutdato);
+        destillering.setMaltbatch(maltbatch);
+        destillering.setKornsort(kornsort);
+        destillering.setMedarbejder(medarbejder);
+        destillering.setMængdevæske(mængdevæske);
+        destillering.setAlkoholprocent(alkoholprocent);
+        destillering.setRygemateriale(rygemateriale);
+        destillering.setKommentar(kommentar);
     }
 
     //------------------------------------------------------------------------------
