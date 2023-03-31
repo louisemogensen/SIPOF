@@ -43,9 +43,7 @@ public class OpretFad extends Application {
 
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
-    private Button btnAnnuller = new Button("Annuller");
 
-    private Fad fade = null;
     private Controller controller;
 
 
@@ -75,30 +73,31 @@ public class OpretFad extends Application {
         pane.add(txfOpretFadnummer, 1, 4, 1, 1);
 
         lstReol.getItems().setAll(controller.getPladser());
-        //lstReol.setOnAction(event -> {Plads valgtPlads = lstReol.getValue();
-        //fade.setPlads(valgtPlads);});
         Label lblReol = new Label("Placer på reol nr.:");
-        pane.add(lblReol, 2, 2);
-        pane.add(lstReol, 3, 2);
+        pane.add(lblReol, 0, 5);
+        pane.add(lstReol, 1, 5);
 
-        pane.add(btnAnnuller, 3, 5);
         pane.add(btnOpretFad, 4, 5);
 
         // connect a method to the button
-        btnOpretFad.setOnAction(event -> this.saveAction());
-    }
-
-    private void saveAction() {
-        if (fade != null) {
-            fade.setFadtype(txfFadtype.getText().trim());
-            btnOpretFad.setDisable(true);
-            clearFields();
-        }
+        btnOpretFad.setOnAction(event -> this.opretFadAction());
     }
 
     private void clearFields() {
         txfFadtype.clear();
         txfLeverandør.clear();
         txfOpretFadnummer.clear();
+    }
+
+    private void opretFadAction() {
+        if (!txfFadtype.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfOpretFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
+            Fad nytFad = new Fad(txfFadtype.getText().trim(), Integer.valueOf(txfOpretFadnummer.getText().trim()), txfLeverandør.getText().trim());
+            Storage.addFad(nytFad);
+            clearFields();
+            lstReol.getSelectionModel().clearSelection();
+            System.out.println("Fad registreret");
+        } else {
+            System.out.println("Alle felter skal udfyldes.");
+        }
     }
 }
