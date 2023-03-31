@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="Combobox">
+    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/OpretFad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +87,7 @@
     <MESSAGE value="Ændringer i Storage og Controller" />
     <MESSAGE value="Ændringer i modelklasserne" />
     <MESSAGE value="Ændringer i samtlige klasser (30/3 kl. 18.49)" />
-    <MESSAGE value="Combobox" />
-    <option name="LAST_COMMIT_MESSAGE" value="Combobox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i samtlige klasser (30/3 kl. 18.49)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SIPOF$OpretFad.ic" NAME="OpretFad Coverage Results" MODIFIED="1680209019999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
