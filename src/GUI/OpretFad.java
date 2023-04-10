@@ -2,6 +2,7 @@ package GUI;
 
 import Applikation.Controller.Controller;
 import Applikation.Model.Fad;
+import Applikation.Model.Lager;
 import Applikation.Model.Plads;
 import Storage.Storage;
 import javafx.geometry.Insets;
@@ -38,6 +39,8 @@ public class OpretFad extends Application {
     //Drop down comboBox
     private ComboBox<Plads> lstReol = new ComboBox<Plads>();
 
+    private ComboBox<Lager> lstLagre = new ComboBox<Lager>();
+
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
 
@@ -61,7 +64,7 @@ public class OpretFad extends Application {
         pane.add(lblLeverandør, 0, 0);
         pane.add(txfLeverandør, 1, 0, 1, 2);
 
-        Label lblFadtype = new Label("Fadtype:");
+        Label lblFadtype = new Label("Tidligere indhold:");
         pane.add(lblFadtype, 0, 2);
         pane.add(txfFadtype, 1, 2, 1, 2);
 
@@ -69,12 +72,17 @@ public class OpretFad extends Application {
         pane.add(lblOpretFadnummer, 0, 4);
         pane.add(txfOpretFadnummer, 1, 4, 1, 1);
 
+        lstLagre.getItems().setAll(controller.getLagre());
+        Label lblLager = new Label("Angiv lager:");
+        pane.add(lblLager, 0, 5);
+        pane.add(lstLagre, 1, 5);
+
         lstReol.getItems().setAll(controller.getPladser());
         Label lblReol = new Label("Placer på reol nr.:");
-        pane.add(lblReol, 0, 5);
-        pane.add(lstReol, 1, 5);
+        pane.add(lblReol, 0, 7);
+        pane.add(lstReol, 1, 7);
 
-        pane.add(btnOpretFad, 4, 5);
+        pane.add(btnOpretFad, 4, 7);
 
         // connect a method to the button
         btnOpretFad.setOnAction(event -> this.opretFadAction());

@@ -99,6 +99,8 @@ public class Controller {
 
     public static List<Plads> getPladser() { return Storage.getPlads(); }
 
+    public static List<Lager> getLagre() {return Storage.getLagre();}
+
     public static void initContent() {
 
         // Version 1.0 start
