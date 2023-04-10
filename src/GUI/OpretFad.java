@@ -100,9 +100,9 @@ public class OpretFad extends Application {
             Storage.addFad(nytFad);
             clearFields();
             lstReol.getSelectionModel().clearSelection();
-            System.out.println("Fad registreret");
+            System.out.println("Fad registreret");  //Denne besked kommer i konsollen og ikke i appen
         } else {
-            System.out.println("Alle felter skal udfyldes.");
+            System.out.println("Alle felter skal udfyldes."); //Denne besked kommer i konsollen og ikke i appen
         }
     }
 }
