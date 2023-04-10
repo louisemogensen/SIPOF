@@ -23,12 +23,9 @@ public class OpretFad extends Application {
     public void start(Stage stage) {
         stage.setTitle("SIPOF");
         GridPane pane = new GridPane();
-        System.out.println("Test1");
         this.initContent(pane);
-        System.out.println("Test2");
         Scene scene = new Scene(pane);
         stage.setScene(scene);
-        System.out.println("Test3");
         stage.show();
     }
 
@@ -68,7 +65,7 @@ public class OpretFad extends Application {
         pane.add(lblFadtype, 0, 2);
         pane.add(txfFadtype, 1, 2, 1, 2);
 
-        Label lblOpretFadnummer = new Label("Opret fadnummer:");
+        Label lblOpretFadnummer = new Label("Fadnummer:");
         pane.add(lblOpretFadnummer, 0, 4);
         pane.add(txfOpretFadnummer, 1, 4, 1, 1);
 

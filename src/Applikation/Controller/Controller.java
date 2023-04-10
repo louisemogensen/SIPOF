@@ -3,6 +3,7 @@ package Applikation.Controller;
 import Applikation.Model.*;
 import Storage.Storage;
 
+import javax.naming.ldap.Control;
 import javax.swing.plaf.synth.ColorType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -117,6 +118,9 @@ public class Controller {
         System.out.println(Storage.getPlads());
 
         // Version 1.0 slut
+
+        // Version 1.1 start
+
     }
 
 
