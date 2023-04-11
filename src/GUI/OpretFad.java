@@ -30,7 +30,7 @@ public class OpretFad extends Application {
 
     //Text fields
     private TextField txfLeverandør = new TextField();
-    private TextField txfFadtype = new TextField();
+    private TextField txfTidligereIndhold = new TextField();
     private TextField txfFadnummer = new TextField();
 
     //Drop down comboBox
@@ -101,9 +101,9 @@ public class OpretFad extends Application {
         pane.add(lblLeverandør, 0, 1);
         pane.add(txfLeverandør, 1, 1, 1, 2);
 
-        Label lblFadtype = new Label("Tidligere indhold:");
-        pane.add(lblFadtype, 0, 3);
-        pane.add(txfFadtype, 1, 3, 1, 2);
+        Label lblTidligereIndhold = new Label("Tidligere indhold:");
+        pane.add(lblTidligereIndhold, 0, 3);
+        pane.add(txfTidligereIndhold, 1, 3, 1, 2);
 
         Label lblFadnummer = new Label("Fadnummer:");
         pane.add(lblFadnummer, 0, 5);
@@ -111,36 +111,44 @@ public class OpretFad extends Application {
 
         lstLagre.getItems().setAll(controller.getLagre());
         Label lblLager = new Label("Angiv lager:");
-        pane.add(lblLager, 0, 6);
-        pane.add(lstLagre, 1, 6);
+        pane.add(lblLager, 0, 7);
+        pane.add(lstLagre, 1, 7);
 
         lstReol.getItems().setAll(controller.getPladser());
-        Label lblReol = new Label("Placer på reol nr.:");
-        pane.add(lblReol, 0, 7);
-        pane.add(lstReol, 1, 7);
+        Label lblReol = new Label("Angiv plads:");
+        pane.add(lblReol, 0, 9);
+        pane.add(lstReol, 1, 9);
 
-        pane.add(btnOpretFad, 5, 7);
+        pane.add(btnOpretFad, 5, 9);
 
         //Tilslutter metode til button
-        btnOpretFad.setOnAction(event -> this.opretFadAction());
+        btnOpretFad.setOnAction(event -> this.opretFadAction(pane));
     }
 
     private void clearFields() {
-        txfFadtype.clear();
+        txfTidligereIndhold.clear();
         txfLeverandør.clear();
         txfFadnummer.clear();
     }
 
-    private void opretFadAction() {
-        if (!txfFadtype.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-            Fad nytFad = new Fad(txfFadtype.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim());
+    private void opretFadAction(GridPane pane) {
+
+
+        if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
+            Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim());
             Storage.addFad(nytFad);
             clearFields();
             lstReol.getSelectionModel().clearSelection();
-            System.out.println("Fad registreret");
+            Label lblFadRegistreret = new Label("Fad registreret");
+            pane.add(lblFadRegistreret, 1, 11);
         } else {
-            System.out.println("Alle felter skal udfyldes.");
+           Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
+           pane.add(lblUdfyldAlleFelter, 1, 11);
+
+           //fede so
         }
     }
+
+
 
 }
