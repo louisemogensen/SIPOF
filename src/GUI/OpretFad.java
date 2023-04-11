@@ -134,21 +134,13 @@ public class OpretFad extends Application {
     private void opretFadAction() {
         if (!txfFadtype.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
             Fad nytFad = new Fad(txfFadtype.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim());
-
-            if (!txfFadtype.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !lstReol.getSelectionModel().isEmpty()) {
-                Fad fad = controller.createFad(txfFadtype.getText(), Integer.parseInt(txfFadnummer.getText()), txfLeverandør.getText(), lstReol.getValue());
-                Plads valgtPlads = lstReol.getValue();
-                lstReol.getItems().remove(valgtPlads);
-                clearFields();
-
             Storage.addFad(nytFad);
             clearFields();
             lstReol.getSelectionModel().clearSelection();
-
             System.out.println("Fad registreret");
         } else {
             System.out.println("Alle felter skal udfyldes.");
         }
     }
 
-}}
+}
