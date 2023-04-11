@@ -144,6 +144,8 @@ public class OpretFad extends Application {
         } else {
            Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
            pane.add(lblUdfyldAlleFelter, 1, 11);
+
+           //fede so
         }
     }
 
