@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/Model/DestilleringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Applikation/Model/FadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Model/FadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Applikation/Model/LagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Model/LagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

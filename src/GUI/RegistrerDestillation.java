@@ -1,7 +1,9 @@
 package GUI;
 
 import Applikation.Controller.Controller;
+import Applikation.Model.Destillering;
 import Applikation.Model.Fad;
+import Storage.Storage;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
