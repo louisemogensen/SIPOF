@@ -133,22 +133,24 @@ public class OpretFad extends Application {
 
     private void opretFadAction(GridPane pane) {
 
-
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
             Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim());
-            Storage.addFad(nytFad);
-            clearFields();
-            lstReol.getSelectionModel().clearSelection();
-            Label lblFadRegistreret = new Label("Fad registreret");
-            pane.add(lblFadRegistreret, 1, 11);
-        } else {
-           Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
-           pane.add(lblUdfyldAlleFelter, 1, 11);
 
-           //fede so
+                //Fjerner den valgte plads fra ComboBox
+                Plads valgtPlads = lstReol.getValue();
+                lstReol.getItems().remove(valgtPlads);
+
+                Storage.addFad(nytFad);
+                clearFields();
+                lstReol.getSelectionModel().clearSelection();
+
+                Label lblFadRegistreret = new Label("Fad registreret");
+                pane.add(lblFadRegistreret, 1, 11);
+
+            } else {
+                Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
+                pane.add(lblUdfyldAlleFelter, 1, 11);
+
+            }
         }
     }
-
-
-
-}
