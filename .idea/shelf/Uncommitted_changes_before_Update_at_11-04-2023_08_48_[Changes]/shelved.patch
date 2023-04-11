@@ -1,0 +1,21 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -3,9 +3,10 @@
+   <component name="ChangeListManager">
+     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/GUI/OpretFad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/RegistrerWhisky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegistrerWhisky.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/VæskerPåFade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/VæskerPåFade.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
