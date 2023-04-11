@@ -14,20 +14,6 @@ import javafx.stage.Stage;
 
 public class OpretFad extends GridPane {
 
-   /* @Override
-    public void start(Stage stage) {
-        stage.setTitle("SIPOF");
-        GridPane pane = new GridPane();
-        System.out.println("Test1");
-        this.initContent(pane);
-        System.out.println("Test2");
-        Scene scene = new Scene(pane);
-        stage.setScene(scene);
-        System.out.println("Test3");
-        stage.show();
-    }*/
-
-
     //Text fields
     private TextField txfLeverandør = new TextField();
     private TextField txfTidligereIndhold = new TextField();
