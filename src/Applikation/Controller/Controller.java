@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Controller {
 
-    public static Fad createFad(String fadtype, int fadnummer, boolean erFadFyldt, String fadleverandør, Plads plads) {
+    public static Fad createFad(String fadtype, int fadnummer, String fadleverandør, Plads plads) {
         Fad fad = new Fad(fadtype, fadnummer, fadleverandør);
         Storage.addFad(fad);
         fad.setPlads(plads);
