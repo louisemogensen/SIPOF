@@ -2,6 +2,7 @@ package GUI;
 
 import Applikation.Model.Fad;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -11,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class RegistrerDestillation extends Application {
+public class RegistrerDestillation extends GridPane{
 
     private TextField txfDestillat = new TextField();
     private TextField txfLiter = new TextField();
@@ -66,5 +67,8 @@ public class RegistrerDestillation extends Application {
         pane.add(lstFad, 4,2);
 
         pane.add(btnRegistrer, 4,7);
+    }
+
+    public void updateControls() {
     }
 }
