@@ -48,4 +48,10 @@ public class Lager {
     }
 
     //------------------------------------
+
+    @Override
+    public String toString() {
+        return "Lager " + lokation;
+    }
+
 }

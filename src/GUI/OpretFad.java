@@ -121,7 +121,7 @@ public class OpretFad extends Application {
 
         pane.add(btnOpretFad, 5, 7);
 
-        // connect a method to the button
+        //Tilslutter metode til button
         btnOpretFad.setOnAction(event -> this.opretFadAction());
     }
 
