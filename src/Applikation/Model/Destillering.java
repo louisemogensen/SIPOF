@@ -125,4 +125,26 @@ public class Destillering {
             fad.setDestillering(null);
         }
     }
+
+    public void fordelVæske() {
+
+        double volumeFyldtPå = 0;
+
+        for (Fad fad : fade) {
+
+            if (volumeFyldtPå < (mængdevæske - fad.getMaxVolume())) {
+                volumeFyldtPå += fad.getMaxVolume();
+                fad.setNuværendeVolume(fad.getMaxVolume());
+
+            } else if (mængdevæske != volumeFyldtPå) {
+                double sidstePåfyldning = mængdevæske - volumeFyldtPå;
+                volumeFyldtPå += sidstePåfyldning;
+                fad.setNuværendeVolume(sidstePåfyldning);
+            }
+        }
+
+    }
+
+    
+
 }

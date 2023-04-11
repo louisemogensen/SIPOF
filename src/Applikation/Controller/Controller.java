@@ -3,6 +3,7 @@ package Applikation.Controller;
 import Applikation.Model.*;
 import Storage.Storage;
 
+import javax.crypto.Mac;
 import javax.naming.ldap.Control;
 import javax.swing.plaf.synth.ColorType;
 import java.time.LocalDate;
@@ -12,8 +13,8 @@ import java.util.List;
 
 public class Controller {
 
-    public static Fad createFad(String fadtype, int fadnummer, String fadleverandør, Plads plads) {
-        Fad fad = new Fad(fadtype, fadnummer, fadleverandør);
+    public static Fad createFad(String fadtype, int fadnummer, String fadleverandør, Plads plads, double maxVolume) {
+        Fad fad = new Fad(fadtype, fadnummer, fadleverandør, maxVolume);
         Storage.addFad(fad);
         fad.setPlads(plads);
         return fad;
@@ -23,9 +24,10 @@ public class Controller {
         Storage.removeFad(fad);
     }
 
-    public static void updateFad(Fad fad, String fadtype, int fadnummer) {
+    public static void updateFad(Fad fad, String fadtype, int fadnummer, double maxVolume) {
         fad.setFadtype(fadtype);
         fad.setFadnummer(fadnummer);
+        fad.setMaxVolume(maxVolume);
     }
 
     //------------------------------------------------------------------------------
@@ -113,7 +115,7 @@ public class Controller {
         Plads plads3 = Controller.createPlads(1, 3, lager2);
         Plads plads4 = Controller.createPlads(1, 4, lager2);
 
-        Fad fad = new Fad("Cherry", 1, "Himmeriggården");
+        Fad fad = new Fad("Cherry", 1, "Himmeriggården", 23487);
 
         fad.setPlads(plads1);
 

@@ -8,16 +8,21 @@ public class Fad {
     private int fadnummer;
     private String fadleverandør;
 
+    private double maxVolume;
+
+    private double nuværendeVolume;
+
     // Linkattributter
 
     private Destillering destillering;
     private Plads plads;
     private ArrayList<Whiskey> whiskeyArrayList = new ArrayList<>();
 
-    public Fad(String fadtype, int fadnummer,  String fadleverandør) {
+    public Fad(String fadtype, int fadnummer,  String fadleverandør, double maxVolume) {
         this.fadtype = fadtype;
         this.fadnummer = fadnummer;
         this.fadleverandør = fadleverandør;
+        this.maxVolume = maxVolume;
     }
 
     public String getFadtype() {
@@ -42,6 +47,22 @@ public class Fad {
 
     public void setFadleverandør(String fadleverandør) {
         this.fadleverandør = fadleverandør;
+    }
+
+    public double getMaxVolume() {
+        return maxVolume;
+    }
+
+    public void setMaxVolume(double maxVolume) {
+        this.maxVolume = maxVolume;
+    }
+
+    public double getNuværendeVolume() {
+        return nuværendeVolume;
+    }
+
+    public void setNuværendeVolume(double nuværendeVolume) {
+        this.nuværendeVolume = nuværendeVolume;
     }
 
     // Metoder til at vedligeholde forbindelsen til linkattributter

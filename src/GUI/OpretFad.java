@@ -18,6 +18,7 @@ public class OpretFad extends GridPane {
     private TextField txfLeverandør = new TextField();
     private TextField txfTidligereIndhold = new TextField();
     private TextField txfFadnummer = new TextField();
+    private TextField txfMaxVolume = new TextField();
 
     //Drop down comboBox
     private ComboBox<Plads> lstReol = new ComboBox<Plads>();
@@ -52,18 +53,22 @@ public class OpretFad extends GridPane {
         this.add(lblFadnummer, 0, 5);
         this.add(txfFadnummer, 1, 5, 1, 1);
 
+        Label lblMaxVolume = new Label("Angiv maxvolume");
+        this.add(lblMaxVolume, 0, 7);
+        this.add(txfMaxVolume, 1, 7);
+
         lstLagre.getItems().setAll(Controller.getLagre());
         Label lblLager = new Label("Angiv lager:");
-        this.add(lblLager, 0, 7);
-        this.add(lstLagre, 1, 7);
+        this.add(lblLager, 0, 9);
+        this.add(lstLagre, 1, 9);
 
 
         lstReol.getItems().setAll(Controller.getPladser());
         Label lblReol = new Label("Angiv plads:");
-        this.add(lblReol, 0, 9);
-        this.add(lstReol, 1, 9);
+        this.add(lblReol, 0, 11);
+        this.add(lstReol, 1, 11);
 
-        this.add(btnOpretFad, 5, 9);
+        this.add(btnOpretFad, 5, 11);
 
         //Tilslutter metode til button
         btnOpretFad.setOnAction(event -> this.opretFadAction(this));
@@ -78,7 +83,7 @@ public class OpretFad extends GridPane {
     private void opretFadAction(GridPane pane) {
 
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-            Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim());
+            Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
                 //Fjerner den valgte plads fra ComboBox
                 Plads valgtPlads = lstReol.getValue();
