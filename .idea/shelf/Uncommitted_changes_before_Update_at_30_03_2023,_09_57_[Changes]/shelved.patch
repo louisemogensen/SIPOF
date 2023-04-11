@@ -1,0 +1,400 @@
+Index: src/Applikation/Model/Plads.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Applikation/Model/Plads.java b/src/Applikation/Model/Plads.java
+--- a/src/Applikation/Model/Plads.java	
++++ b/src/Applikation/Model/Plads.java	
+@@ -5,8 +5,10 @@
+     private int hyldenummer;
+     private int pladsnummer;
+ 
+-    //Linkattributter
++    // Linkattributter
++
+     private Lager lager;
++
+     private Fad fad;
+ 
+     public Plads(int hyldenummer, int pladsnummer, Lager lager) {
+@@ -31,7 +33,7 @@
+         this.pladsnummer = pladsnummer;
+     }
+ 
+-    //Metoder til at vedligeholde forbindelsen til linkattributter
++    // Metoder til at vedligeholde forbindelsen til linkattributter
+ 
+     public Lager getLager() {
+         return lager;
+@@ -47,21 +49,7 @@
+ 
+     public void setFad(Fad fad) {
+         if(this.fad != fad) {
+-            Fad oldFad = this.fad;
+-            if(oldFad != null) {
+-                oldFad.removePlads(this);
+-            }
+             this.fad = fad;
+-            if(fad != null) {
+-                fad.addPlads(this);
+-            }
+         }
+-
+     }
+-
+-    public void removeFad(Fad fad) {
+-    }
+-
+-    public void addFad(Fad fad) {
+-    }
+-}
++}
+\ No newline at end of file
+Index: src/Applikation/Model/Lager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Applikation/Model/Lager.java b/src/Applikation/Model/Lager.java
+--- a/src/Applikation/Model/Lager.java	
++++ b/src/Applikation/Model/Lager.java	
+@@ -5,18 +5,18 @@
+ public class Lager {
+ 
+     private String lokation;
+-    private int ledigepladser;
++    private int ledigePladser;
+     private int antalFade;
+-    private int maxAntalFade;
++    private int maxAntalPladser;
+ 
+-    //Linkattribut
++    // Linkattribut
+     private ArrayList<Plads> pladser = new ArrayList<>();
+ 
+-    public Lager(String lokation, int ledigepladser, int antalFade, int maxAntalFade) {
++    public Lager(String lokation, int ledigePladser, int antalFade, int maxAntalPladser) {
+         this.lokation = lokation;
+-        this.ledigepladser = ledigepladser;
++        this.ledigePladser = ledigePladser;
+         this.antalFade = antalFade;
+-        this.maxAntalFade = maxAntalFade;
++        this.maxAntalPladser = maxAntalPladser;
+     }
+ 
+     public String getLokation() {
+@@ -27,12 +27,12 @@
+         this.lokation = lokation;
+     }
+ 
+-    public int getLedigepladser() {
+-        return ledigepladser;
++    public int getLedigePladser() {
++        return ledigePladser;
+     }
+ 
+-    public void setLedigepladser(int ledigepladser) {
+-        this.ledigepladser = ledigepladser;
++    public void setLedigePladser(int ledigePladser) {
++        this.ledigePladser = ledigePladser;
+     }
+ 
+     public int getAntalFade() {
+@@ -43,16 +43,17 @@
+         this.antalFade = antalFade;
+     }
+ 
+-    public int getMaxAntalFade() {
+-        return maxAntalFade;
++    public int getMaxAntalPladser() {
++        return maxAntalPladser;
+     }
+ 
+-    public void setMaxAntalFade(int maxAntalFade) {
+-        this.maxAntalFade = maxAntalFade;
++    public void setMaxAntalPladser(int maxAntalPladser) {
++        this.maxAntalPladser = maxAntalPladser;
+     }
+ 
+-    //Metoder til at vedligeholde forbindelsen til linkattribut
++    // Metoder til at vedligeholde forbindelsen til linkattribut
+ 
++
+     public ArrayList<Plads> getPladser() {
+         return new ArrayList<>(pladser);
+     }
+@@ -63,9 +64,11 @@
+         return plads;
+     }
+ 
+-    public void deletePlads(Plads plads) {
+-        if(pladser.contains(plads)) {
+-            pladser.remove(plads);
++    public void removePlads(Plads plads) {
++        if (pladser.contains(plads)) {
++        pladser.remove(plads);
+         }
++
+     }
+-}
++
++}
+\ No newline at end of file
+Index: src/Storage/Storage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Storage/Storage.java b/src/Storage/Storage.java
+--- a/src/Storage/Storage.java	
++++ b/src/Storage/Storage.java	
+@@ -12,7 +12,7 @@
+     public static ArrayList<Lager> lagre = new ArrayList<Lager>();
+     public static ArrayList<Plads> pladser = new ArrayList<Plads>();
+ 
+-    //------
++    //------------------------------------------------------------------------------
+ 
+     public static ArrayList<Fad> getFade() {return new ArrayList<Fad>(fade);}
+ 
+@@ -20,7 +20,7 @@
+ 
+     public static void removeFad(Fad fad) {fade.remove(fad);}
+ 
+-    //------
++    //------------------------------------------------------------------------------
+ 
+     public static ArrayList<Lager> getLagre() {return new ArrayList<Lager>(lagre);}
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,11 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="Ændringer i Fad og Plads">
++    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/Applikation/Model/Destillering.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GUI/OpretFad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Lager.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Plads.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Storage/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Storage/Storage.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,11 +39,6 @@
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+   }
+ }</component>
+-  <component name="RecentsManager">
+-    <key name="CreateClassDialog.RecentsKey">
+-      <recent name="GUI" />
+-    </key>
+-  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+Index: src/Applikation/Model/Destillering.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Applikation/Model/Destillering.java b/src/Applikation/Model/Destillering.java
+new file mode 100644
+--- /dev/null	
++++ b/src/Applikation/Model/Destillering.java	
+@@ -0,0 +1,128 @@
++package Applikation.Model;
++
++import java.time.LocalDate;
++import java.util.ArrayList;
++
++public class Destillering {
++
++    private LocalDate startdato;
++    private LocalDate slutdato;
++    private String maltbatch;
++    private String kornsort;
++    private String medarbejdeR;
++    private double mængdevæske;
++    private double alkoholprocent;
++    private String rygemateriale;
++    private String kommentar;
++
++    // Linkattribut
++    private ArrayList<Fad> fade = new ArrayList<>();
++
++    public Destillering(LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejdeR, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
++        this.startdato = startdato;
++        this.slutdato = slutdato;
++        this.maltbatch = maltbatch;
++        this.kornsort = kornsort;
++        this.medarbejdeR = medarbejdeR;
++        this.mængdevæske = mængdevæske;
++        this.alkoholprocent = alkoholprocent;
++        this.rygemateriale = rygemateriale;
++        this.kommentar = kommentar;
++    }
++
++    public LocalDate getStartdato() {
++        return startdato;
++    }
++
++    public void setStartdato(LocalDate startdato) {
++        this.startdato = startdato;
++    }
++
++    public LocalDate getSlutdato() {
++        return slutdato;
++    }
++
++    public void setSlutdato(LocalDate slutdato) {
++        this.slutdato = slutdato;
++    }
++
++    public String getMaltbatch() {
++        return maltbatch;
++    }
++
++    public void setMaltbatch(String maltbatch) {
++        this.maltbatch = maltbatch;
++    }
++
++    public String getKornsort() {
++        return kornsort;
++    }
++
++    public void setKornsort(String kornsort) {
++        this.kornsort = kornsort;
++    }
++
++    public String getMedarbejdeR() {
++        return medarbejdeR;
++    }
++
++    public void setMedarbejdeR(String medarbejdeR) {
++        this.medarbejdeR = medarbejdeR;
++    }
++
++    public double getMængdevæske() {
++        return mængdevæske;
++    }
++
++    public void setMængdevæske(double mængdevæske) {
++        this.mængdevæske = mængdevæske;
++    }
++
++    public double getAlkoholprocent() {
++        return alkoholprocent;
++    }
++
++    public void setAlkoholprocent(double alkoholprocent) {
++        this.alkoholprocent = alkoholprocent;
++    }
++
++    public String getRygemateriale() {
++        return rygemateriale;
++    }
++
++    public void setRygemateriale(String rygemateriale) {
++        this.rygemateriale = rygemateriale;
++    }
++
++    public String getKommentar() {
++        return kommentar;
++    }
++
++    public void setKommentar(String kommentar) {
++        this.kommentar = kommentar;
++    }
++
++    // Metoder til at vedligeholde forbindelsen til linkattribut
++
++    public ArrayList<Fad> getFade() {
++        return new ArrayList<>(fade);
++    }
++
++    public void setFade(ArrayList<Fad> fade) {
++        this.fade = fade;
++    }
++
++    public void addFad(Fad fad) {
++        if(!fade.contains(fad)) {
++            fade.add(fad);
++            fad.setDestillering(this);
++        }
++    }
++
++    public void removeFad(Fad fad) {
++        if(fade.contains(fad)) {
++            fade.remove(fad);
++            fad.setDestillering(null);
++        }
++    }
++}
+\ No newline at end of file
+Index: src/Applikation/Model/Whiskey.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Applikation/Model/Whiskey.java b/src/Applikation/Model/Whiskey.java
+new file mode 100644
+--- /dev/null	
++++ b/src/Applikation/Model/Whiskey.java	
+@@ -0,0 +1,45 @@
++package Applikation.Model;
++
++import java.time.LocalDate;
++
++public class Whiskey {
++
++    private double alkoholprocent;
++    private LocalDate påfyldningsdato;
++
++    // Linkattribut
++    private Fad fad;
++
++    public Whiskey(double alkoholprocent, LocalDate påfyldningsdato, Fad fad) {
++        this.alkoholprocent = alkoholprocent;
++        this.påfyldningsdato = påfyldningsdato;
++        this.fad = fad;
++    }
++
++    public double getAlkoholprocent() {
++        return alkoholprocent;
++    }
++
++    public void setAlkoholprocent(double alkoholprocent) {
++        this.alkoholprocent = alkoholprocent;
++    }
++
++    public LocalDate getPåfyldningsdato() {
++        return påfyldningsdato;
++    }
++
++    public void setPåfyldningsdato(LocalDate påfyldningsdato) {
++        this.påfyldningsdato = påfyldningsdato;
++    }
++
++    // Metoder til at vedligeholde forbindelsen til linkattribut
++
++
++    public Fad getFad() {
++        return fad;
++    }
++
++    public void setFad(Fad fad) {
++        this.fad = fad;
++    }
++}
