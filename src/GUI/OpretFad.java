@@ -12,8 +12,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-
 public class OpretFad extends Application {
 
     @Override
@@ -33,10 +31,12 @@ public class OpretFad extends Application {
     //Text fields
     private TextField txfLeverandør = new TextField();
     private TextField txfFadtype = new TextField();
-    private TextField txfOpretFadnummer = new TextField();
+    private TextField txfFadnummer = new TextField();
 
     //Drop down comboBox
     private ComboBox<Plads> lstReol = new ComboBox<Plads>();
+
+    private ComboBox<Lager> lstLagre = new ComboBox<Lager>();
 
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
@@ -101,20 +101,25 @@ public class OpretFad extends Application {
         pane.add(lblLeverandør, 0, 1);
         pane.add(txfLeverandør, 1, 1, 1, 2);
 
-        Label lblFadtype = new Label("Fadtype:");
+        Label lblFadtype = new Label("Tidligere indhold:");
         pane.add(lblFadtype, 0, 3);
         pane.add(txfFadtype, 1, 3, 1, 2);
 
-        Label lblOpretFadnummer = new Label("Opret fadnummer:");
-        pane.add(lblOpretFadnummer, 0, 5);
-        pane.add(txfOpretFadnummer, 1, 5, 1, 1);
+        Label lblFadnummer = new Label("Fadnummer:");
+        pane.add(lblFadnummer, 0, 5);
+        pane.add(txfFadnummer, 1, 5, 1, 1);
+
+        lstLagre.getItems().setAll(controller.getLagre());
+        Label lblLager = new Label("Angiv lager:");
+        pane.add(lblLager, 0, 6);
+        pane.add(lstLagre, 1, 6);
 
         lstReol.getItems().setAll(controller.getPladser());
         Label lblReol = new Label("Placer på reol nr.:");
-        pane.add(lblReol, 0, 6);
-        pane.add(lstReol, 1, 6);
+        pane.add(lblReol, 0, 7);
+        pane.add(lstReol, 1, 7);
 
-        pane.add(btnOpretFad, 4, 7);
+        pane.add(btnOpretFad, 5, 7);
 
         // connect a method to the button
         btnOpretFad.setOnAction(event -> this.opretFadAction());
@@ -123,12 +128,12 @@ public class OpretFad extends Application {
     private void clearFields() {
         txfFadtype.clear();
         txfLeverandør.clear();
-        txfOpretFadnummer.clear();
+        txfFadnummer.clear();
     }
 
     private void opretFadAction() {
-        if (!txfFadtype.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfOpretFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-            Fad nytFad = new Fad(txfFadtype.getText().trim(), Integer.parseInt(txfOpretFadnummer.getText().trim()), txfLeverandør.getText().trim());
+        if (!txfFadtype.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
+            Fad nytFad = new Fad(txfFadtype.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim());
             Storage.addFad(nytFad);
             clearFields();
             lstReol.getSelectionModel().clearSelection();
@@ -137,4 +142,5 @@ public class OpretFad extends Application {
             System.out.println("Alle felter skal udfyldes.");
         }
     }
+
 }
