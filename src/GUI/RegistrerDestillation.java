@@ -1,5 +1,6 @@
 package GUI;
 
+import Applikation.Controller.Controller;
 import Applikation.Model.Fad;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -23,50 +24,42 @@ public class RegistrerDestillation extends GridPane{
 
     private Button btnRegistrer = new Button("Registrer");
 
+    private Controller controller;
 
-    //Stage
-    public void start(Stage stage) {
-        stage.setTitle("SIPOF");
-        GridPane pane = new GridPane();
-        this.initContent(pane);
-
-        Scene scene = new Scene(pane);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    //Pane
-    private void initContent(GridPane pane) {
+    //this
+    public RegistrerDestillation() {
         // show or hide grid lines
-        pane.setGridLinesVisible(false);
-        // set padding of the pane
-        pane.setPadding(new Insets(20));
+        this.setGridLinesVisible(false);
+        // set padding of the this
+        this.setPadding(new Insets(20));
         // set horizontal gap between components
-        pane.setHgap(10);
+        this.setHgap(10);
         // set vertical gap between components
-        pane.setVgap(10);
+        this.setVgap(10);
+
+        Controller.initContent();
 
         Label lblDestillat = new Label("Destillat:");
-        pane.add(lblDestillat, 0, 0);
-        pane.add(txfDestillat, 1,0,1,2);
+        this.add(lblDestillat, 0, 0);
+        this.add(txfDestillat, 1,0,1,2);
 
         Label lblLiter = new Label("Antal liter:");
-        pane.add(lblLiter, 0, 2);
-        pane.add(txfLiter, 1,2,1,2);
+        this.add(lblLiter, 0, 2);
+        this.add(txfLiter, 1,2,1,2);
 
         Label lblAlkoholprocent = new Label("Alkoholprocent:");
-        pane.add(lblAlkoholprocent, 0, 4);
-        pane.add(txfAlkoholprocent,1,4,1,1);
+        this.add(lblAlkoholprocent, 0, 4);
+        this.add(txfAlkoholprocent,1,4,1,1);
 
         Label lblNewMake = new Label("New Make nummer:");
-        pane.add(lblNewMake, 0, 6);
-        pane.add(txfNewMake,1,6,1,1);
+        this.add(lblNewMake, 0, 6);
+        this.add(txfNewMake,1,6,1,1);
 
         Label lblFad = new Label("Fad:");
-        pane.add(lblFad, 3,2);
-        pane.add(lstFad, 4,2);
+        this.add(lblFad, 3,2);
+        this.add(lstFad, 4,2);
 
-        pane.add(btnRegistrer, 4,7);
+        this.add(btnRegistrer, 4,7);
     }
 
     public void updateControls() {
