@@ -4,8 +4,9 @@
     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Destillering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Destillering.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/OpretFad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,5 +106,10 @@
     <MESSAGE value="Ændringer i OpretFad" />
     <MESSAGE value="Ændringer i OpretFad og RegistrerDestillation" />
     <option name="LAST_COMMIT_MESSAGE" value="Ændringer i OpretFad og RegistrerDestillation" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SIPOF$OpretFad.ic" NAME="OpretFad Coverage Results" MODIFIED="1680209019999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>GUI.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -1,12 +1,13 @@
 package Applikation.Model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Destillering {
 
-    private LocalDateTime startdato;
-    private LocalDateTime slutdato;
+    private LocalDate startdato;
+    private LocalDate slutdato;
     private String maltbatch;
     private String kornsort;
     private String medarbejder;
@@ -18,7 +19,7 @@ public class Destillering {
     // Linkattribut
     private ArrayList<Fad> fade = new ArrayList<>();
 
-    public Destillering(LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+    public Destillering(LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
         this.startdato = startdato;
         this.slutdato = slutdato;
         this.maltbatch = maltbatch;
@@ -30,19 +31,19 @@ public class Destillering {
         this.kommentar = kommentar;
     }
 
-    public LocalDateTime getStartdato() {
+    public LocalDate getStartdato() {
         return startdato;
     }
 
-    public void setStartdato(LocalDateTime startdato) {
+    public void setStartdato(LocalDate startdato) {
         this.startdato = startdato;
     }
 
-    public LocalDateTime getSlutdato() {
+    public LocalDate getSlutdato() {
         return slutdato;
     }
 
-    public void setSlutdato(LocalDateTime slutdato) {
+    public void setSlutdato(LocalDate slutdato) {
         this.slutdato = slutdato;
     }
 

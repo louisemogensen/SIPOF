@@ -25,8 +25,6 @@ public class OpretFad extends GridPane {
 
     private ComboBox<Lager> lstLagre = new ComboBox<Lager>();
 
-    private ComboBox<Fad> lstFade = new ComboBox<>();
-
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
 
@@ -69,9 +67,6 @@ public class OpretFad extends GridPane {
         this.add(lblReol, 0, 11);
         this.add(lstReol, 1, 11);
 
-        lstFade.getItems().setAll(Controller.getFade());
-        this.add(lstFade, 5, 6);
-
         this.add(btnOpretFad, 5, 11);
 
         //Tilslutter metode til button
@@ -102,7 +97,6 @@ public class OpretFad extends GridPane {
 
                 Label lblFadRegistreret = new Label("Fad registreret");
                 pane.add(lblFadRegistreret, 1, 13);
-                lstFade.getItems().add(fad);
 
             } else {
                 Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
