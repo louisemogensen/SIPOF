@@ -53,7 +53,7 @@ public class OpretFad extends GridPane {
         this.add(lblFadnummer, 0, 5);
         this.add(txfFadnummer, 1, 5, 1, 1);
 
-        Label lblMaxVolume = new Label("Angiv maxvolume");
+        Label lblMaxVolume = new Label("Angiv maxvolume:");
         this.add(lblMaxVolume, 0, 7);
         this.add(txfMaxVolume, 1, 7);
 
@@ -78,6 +78,7 @@ public class OpretFad extends GridPane {
         txfTidligereIndhold.clear();
         txfLeverandør.clear();
         txfFadnummer.clear();
+        txfMaxVolume.clear();
     }
 
     private void opretFadAction(GridPane pane) {
@@ -104,6 +105,5 @@ public class OpretFad extends GridPane {
                 pane.add(lblUdfyldAlleFelter, 1, 11);
 
             }
-
         }
     }
