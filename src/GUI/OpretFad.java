@@ -85,7 +85,7 @@ public class OpretFad extends GridPane {
         System.out.println("Fade: " + Storage.getFade());
 
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-           // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
+            // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
             Fad fad = Controller.createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
                 //Fjerner den valgte plads fra ComboBox
@@ -97,7 +97,7 @@ public class OpretFad extends GridPane {
                 lstReol.getSelectionModel().clearSelection();
 
                 Label lblFadRegistreret = new Label("Fad registreret");
-                pane.add(lblFadRegistreret, 1, 11);
+                pane.add(lblFadRegistreret, 1, 13);
 
             } else {
                 Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
