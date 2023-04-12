@@ -46,10 +46,11 @@ public class VæskerPåFade extends GridPane {
         btnFordel = new Button("Fordel");
         this.add(btnFordel, 5, 5);
 
-        btnFordel.setOnAction(event -> this.);
+       // btnFordel.setOnAction(event -> this.);
 
     }
 
+    /*
     public void updateControls() {
         lvwFade.getItems().setAll(Controller.getFade());
         lvwDestillering.getItems().setAll(Controller.getDestilleringer());
@@ -61,6 +62,9 @@ public class VæskerPåFade extends GridPane {
         }
 
     }
+
+
+     */
 
 
 }
