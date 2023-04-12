@@ -104,6 +104,7 @@ public class Controller {
 
     public static List<Fad> getFade() {return Storage.getFade();}
 
+
     public static List<Destillering> getDestilleringer() {return Storage.getDestillering();}
 
     public static List<Whiskey> getWhiskey() {return Storage.getWhiskey();}
@@ -120,7 +121,7 @@ public class Controller {
         Plads plads3 = Controller.createPlads(1, 3, lager2);
         Plads plads4 = Controller.createPlads(1, 4, lager2);
 
-        Fad fad = new Fad("Cherry", 1, "Himmeriggården", 23487);
+        Fad fad = createFad("Cherry", 1, "Himmeriggården", 23487);
 
         fad.setPlads(plads1);
 
