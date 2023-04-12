@@ -45,8 +45,6 @@ public class RegistrerDestillation extends GridPane{
         // set vertical gap between components
         this.setVgap(10);
 
-        Controller.initContent();
-
         Label lblDestillat = new Label("Navn på destillat:");
         this.add(lblDestillat, 1, 0);
         txfDestillat = new TextField();
