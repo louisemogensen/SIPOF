@@ -76,7 +76,7 @@ public class Controller {
     }
 
     //------------------------------------------------------------------------------
-    public static Destillering createDestillering(LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+    public static Destillering createDestillering(LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
         Destillering destillering = new Destillering(startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
         Storage.addDestillering(destillering);
         return destillering;
@@ -84,7 +84,7 @@ public class Controller {
 
     public static void deleteDestillering(Destillering destillering) {Storage.removeDestillering(destillering);}
 
-    public static void updateDestillering(Destillering destillering, LocalDateTime startdato, LocalDateTime slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+    public static void updateDestillering(Destillering destillering, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
         destillering.setStartdato(startdato);
         destillering.setSlutdato(slutdato);
         destillering.setMaltbatch(maltbatch);
@@ -132,8 +132,5 @@ public class Controller {
         // Version 1.1 start
 
     }
-
-
-
 
 }
