@@ -102,6 +102,12 @@ public class Controller {
 
     public static List<Lager> getLagre() {return Storage.getLagre();}
 
+    public static List<Fad> getFade() {return Storage.getFade();}
+
+    public static List<Destillering> getDestilleringer() {return Storage.getDestillering();}
+
+    public static List<Whiskey> getWhiskey() {return Storage.getWhiskey();}
+
     public static void initContent() {
 
         // Version 1.0 start
