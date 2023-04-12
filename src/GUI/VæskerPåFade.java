@@ -56,6 +56,9 @@ public class VæskerPåFade extends GridPane {
     }
 
     private void registrerVæskefordeling(Gridpane pane) {
+        if(lvwDestillering.getSelectionModel().getSelectedItems() != null && lvwFade.getSelectionModel().getSelectedItems() != null && !txfAngivMængde.getText().isEmpty()) {
+            //Der er ikk noget at oprette i controlleren
+        }
 
     }
 

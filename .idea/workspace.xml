@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Destillering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Destillering.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/VæskerPåFade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/VæskerPåFade.java" afterDir="false" />
     </list>
@@ -106,6 +104,7 @@
     <MESSAGE value="Ændringer i samtlige klasser (30/3 kl. 23.25 rip)" />
     <MESSAGE value="Ændringer i OpretFad" />
     <MESSAGE value="Ændringer i OpretFad og RegistrerDestillation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i OpretFad og RegistrerDestillation" />
+    <MESSAGE value="Ændringer i" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i" />
   </component>
 </project>

@@ -27,9 +27,6 @@ public class RegistrerDestillation extends GridPane{
 
     private DatePicker dtpStartDato;
     private DatePicker dtpSlutDato;
-
-    private ComboBox<Fad> lstFad = new ComboBox<Fad>();
-
     private Button btnRegistrer = new Button("Registrer");
 
     //this
