@@ -92,4 +92,9 @@ public class RegistrerDestillation extends GridPane{
 
     public void updateControls() {
     }
+
+    public void registrerDestillationAction() {
+
+    }
+
 }

@@ -82,14 +82,17 @@ public class OpretFad extends GridPane {
 
     private void opretFadAction(GridPane pane) {
 
+        System.out.println("Fade: " + Storage.getFade());
+
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-            Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
+           // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
+            Fad fad = Controller.createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
                 //Fjerner den valgte plads fra ComboBox
                 Plads valgtPlads = lstReol.getValue();
                 lstReol.getItems().remove(valgtPlads);
 
-                Storage.addFad(nytFad);
+                Storage.addFad(fad);
                 clearFields();
                 lstReol.getSelectionModel().clearSelection();
 
@@ -101,5 +104,6 @@ public class OpretFad extends GridPane {
                 pane.add(lblUdfyldAlleFelter, 1, 11);
 
             }
+
         }
     }

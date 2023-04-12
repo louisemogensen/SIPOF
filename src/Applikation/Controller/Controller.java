@@ -13,10 +13,9 @@ import java.util.List;
 
 public class Controller {
 
-    public static Fad createFad(String fadtype, int fadnummer, String fadleverandør, Plads plads, double maxVolume) {
+    public static Fad createFad(String fadtype, int fadnummer, String fadleverandør, double maxVolume) {
         Fad fad = new Fad(fadtype, fadnummer, fadleverandør, maxVolume);
         Storage.addFad(fad);
-        fad.setPlads(plads);
         return fad;
     }
 
