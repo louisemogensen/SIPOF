@@ -25,6 +25,8 @@ public class OpretFad extends GridPane {
 
     private ComboBox<Lager> lstLagre = new ComboBox<Lager>();
 
+    private ComboBox<Fad> lstFade = new ComboBox<>();
+
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
 
@@ -62,11 +64,13 @@ public class OpretFad extends GridPane {
         this.add(lblLager, 0, 9);
         this.add(lstLagre, 1, 9);
 
-
         lstReol.getItems().setAll(Controller.getPladser());
         Label lblReol = new Label("Angiv plads:");
         this.add(lblReol, 0, 11);
         this.add(lstReol, 1, 11);
+
+        lstFade.getItems().setAll(Controller.getFade());
+        this.add(lstFade, 5, 6);
 
         this.add(btnOpretFad, 5, 11);
 
@@ -86,19 +90,19 @@ public class OpretFad extends GridPane {
         System.out.println("Fade: " + Storage.getFade());
 
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-           // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
-            Fad fad = Controller.createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
+            // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
+            Fad fad = Controller. createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
                 //Fjerner den valgte plads fra ComboBox
                 Plads valgtPlads = lstReol.getValue();
                 lstReol.getItems().remove(valgtPlads);
 
-                Storage.addFad(fad);
                 clearFields();
                 lstReol.getSelectionModel().clearSelection();
 
                 Label lblFadRegistreret = new Label("Fad registreret");
-                pane.add(lblFadRegistreret, 1, 11);
+                pane.add(lblFadRegistreret, 1, 13);
+                lstFade.getItems().add(fad);
 
             } else {
                 Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");

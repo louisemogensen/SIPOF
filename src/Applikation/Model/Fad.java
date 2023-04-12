@@ -107,4 +107,11 @@ public class Fad {
             whiskey.setFad(null);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Fad{" +
+                "fadnummer=" + fadnummer +
+                '}';
+    }
 }
