@@ -25,6 +25,8 @@ public class OpretFad extends GridPane {
 
     private ComboBox<Lager> lstLagre = new ComboBox<Lager>();
 
+    private ListView<Fad> lvwFade = new ListView<>();
+
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
 
@@ -53,7 +55,7 @@ public class OpretFad extends GridPane {
         this.add(lblFadnummer, 0, 5);
         this.add(txfFadnummer, 1, 5, 1, 1);
 
-        Label lblMaxVolume = new Label("Angiv maxvolume:");
+        Label lblMaxVolume = new Label("Angiv maxvolume");
         this.add(lblMaxVolume, 0, 7);
         this.add(txfMaxVolume, 1, 7);
 
@@ -67,10 +69,15 @@ public class OpretFad extends GridPane {
         this.add(lblReol, 0, 11);
         this.add(lstReol, 1, 11);
 
-        this.add(btnOpretFad, 5, 11);
+        lvwFade.getItems().setAll(Controller.getFade());
+        this.add(lvwFade, 5, 1, 1, 12);
+
+        this.add(btnOpretFad, 6, 12);
 
         //Tilslutter metode til button
         btnOpretFad.setOnAction(event -> this.opretFadAction(this));
+        System.out.println(Storage.getFade());
+
     }
 
     private void clearFields() {
@@ -86,22 +93,31 @@ public class OpretFad extends GridPane {
 
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
             // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
-            Fad fad = Controller. createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
+            System.out.println(Storage.getFade());
+            Controller.createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
-                //Fjerner den valgte plads fra ComboBox
-                Plads valgtPlads = lstReol.getValue();
-                lstReol.getItems().remove(valgtPlads);
+            //Fjerner den valgte plads fra ComboBox
+            Plads valgtPlads = lstReol.getValue();
+            lstReol.getItems().remove(valgtPlads);
 
-                clearFields();
-                lstReol.getSelectionModel().clearSelection();
+            clearFields();
+            lstReol.getSelectionModel().clearSelection();
 
-                Label lblFadRegistreret = new Label("Fad registreret");
-                pane.add(lblFadRegistreret, 1, 13);
+            Label lblFadRegistreret = new Label("Fad registreret");
+            pane.add(lblFadRegistreret, 1, 13);
+            updateControls();
 
-            } else {
-                Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
-                pane.add(lblUdfyldAlleFelter, 1, 11);
+        } else {
+            Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
+            pane.add(lblUdfyldAlleFelter, 1, 13);
 
-            }
         }
+
     }
+
+    public void updateControls() {
+        lvwFade.getItems().setAll(Controller.getFade());
+    }
+
+
+}
