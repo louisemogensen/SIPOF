@@ -1,9 +1,9 @@
 package GUI;
 
+import Applikation.Controller.Controller;
 import Applikation.Model.Destillering;
 import Applikation.Model.Fad;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
@@ -26,12 +26,16 @@ public class VæskerPåFade extends GridPane {
 
         Label lblDestillering = new Label("Vælg destillering");
         this.add(lblDestillering, 0, 1);
+
         lvwDestillering = new ListView<>();
+        lvwDestillering.getItems().setAll(Controller.getDestilleringer());  //Det her virker ikke
         this.add(lvwDestillering, 0, 2, 1, 1);
 
         Label lblFade = new Label("Vælg fad");
         this.add(lblFade, 3, 1);
+
         lvwFade = new ListView<>();
+        lvwFade.getItems().setAll(Controller.getFade());  //Det her virker ikke
         this.add(lvwFade, 3, 2, 1, 1);
 
         Label lblAngivMængde = new Label("Angiv mængde");
@@ -42,11 +46,18 @@ public class VæskerPåFade extends GridPane {
         btnFordel = new Button("Fordel");
         this.add(btnFordel, 5, 5);
 
+        btnFordel.setOnAction(event -> this.);
+
     }
 
     public void updateControls() {
+        lvwFade.getItems().setAll(Controller.getFade());
+        lvwDestillering.getItems().setAll(Controller.getDestilleringer());
+    }
 
-
+    private void registrerVæskefordeling(Gridpane pane) {
 
     }
+
+
 }

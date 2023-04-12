@@ -16,8 +16,6 @@ import javafx.stage.Stage;
 public class RegistrerDestillation extends GridPane{
 
     private TextField txfDestillat;
-    private TextField txfStartDato;
-    private TextField txfSlutdato;
     private TextField txfMaltbatch;
     private TextField txfKornsort;
     private TextField txfMedarbejder;
@@ -107,8 +105,8 @@ public class RegistrerDestillation extends GridPane{
 
     private void registrerDestillationAction(GridPane pane) {
 
-        if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && dtpStartDato.getValue().isBefore(dtpSlutDato.getValue()) && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
-            Controller.createDestillering(dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
+        if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && (!dtpStartDato.getValue().isAfter(dtpSlutDato.getValue())) && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
+            Controller.createDestillering(txfDestillat.getText().trim(), dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
 
             clearFields();
 

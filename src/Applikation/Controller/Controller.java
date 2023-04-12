@@ -76,8 +76,8 @@ public class Controller {
     }
 
     //------------------------------------------------------------------------------
-    public static Destillering createDestillering(LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
-        Destillering destillering = new Destillering(startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
+    public static Destillering createDestillering(String DestilleringID, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+        Destillering destillering = new Destillering(DestilleringID, startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
         Storage.addDestillering(destillering);
         return destillering;
     }
@@ -124,6 +124,8 @@ public class Controller {
         Fad fad = createFad("Cherry", 1, "Himmeriggården", 23487);
 
         fad.setPlads(plads1);
+
+        Destillering destillering = createDestillering("Destillering 1", LocalDate.of(2023,04,13), LocalDate.of(2023, 04, 14), "Info", "Hvede", "Søren", 55, 50, " ", " ");
 
         System.out.println(Storage.getPlads());
 
