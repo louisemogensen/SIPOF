@@ -23,6 +23,7 @@ public class Fad {
         this.fadnummer = fadnummer;
         this.fadleverandør = fadleverandør;
         this.maxVolume = maxVolume;
+        this.nuværendeVolume = 0;
     }
 
     public String getFadtype() {
@@ -110,8 +111,6 @@ public class Fad {
 
     @Override
     public String toString() {
-        return "Fad{" +
-                "fadnummer=" + fadnummer +
-                '}';
+        return "Fadnummer: " + fadnummer;
     }
 }
