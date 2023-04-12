@@ -55,9 +55,6 @@ public class RegistrerDestillation extends GridPane{
         dtpStartDato = new DatePicker();
         this.add(dtpStartDato, 2, 2);
 
-        Label lblAngivDato = new Label("Dato angives som dd-mm-åååå");
-        this.add(lblAngivDato, 3, 2);
-
         Label lblSlutDato = new Label("Slutdato:");
         this.add(lblSlutDato, 1, 3);
         dtpSlutDato = new DatePicker();
@@ -99,7 +96,7 @@ public class RegistrerDestillation extends GridPane{
         this.add(txaKommentar, 2, 18);
         txaKommentar.setEditable(true);
 
-        this.add(btnRegistrer, 4,18);
+        this.add(btnRegistrer, 4,20);
         //Tilslutter metode til button
         btnRegistrer.setOnAction(event -> this.registrerDestillationAction(this));
     }
@@ -116,11 +113,11 @@ public class RegistrerDestillation extends GridPane{
             clearFields();
 
             Label lblFadRegistreret = new Label("Destillat registreret");
-            pane.add(lblFadRegistreret, 1, 13);
+            pane.add(lblFadRegistreret, 1, 20);
 
         } else {
             Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
-            pane.add(lblUdfyldAlleFelter, 1, 11);
+            pane.add(lblUdfyldAlleFelter, 1, 20);
 
         }
     }
