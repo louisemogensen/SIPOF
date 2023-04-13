@@ -76,8 +76,8 @@ public class Controller {
     }
 
     //------------------------------------------------------------------------------
-    public static Destillering createDestillering(String DestilleringID, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
-        Destillering destillering = new Destillering(DestilleringID, startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
+    public static Destillering createDestillering(String destilleringID, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+        Destillering destillering = new Destillering(destilleringID, startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
         Storage.addDestillering(destillering);
         return destillering;
     }

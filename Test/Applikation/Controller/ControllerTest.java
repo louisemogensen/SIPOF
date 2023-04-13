@@ -52,6 +52,7 @@ class ControllerTest {
     @Order(3)
     void createDestillation() {
         //Arrange
+        String destilleringId = "Destillering1";
         LocalDate startdato = LocalDate.of(2023, 4, 14);
         LocalDate slutdato = LocalDate.of(2023, 4, 15);
         String maltbatch = "20";
@@ -62,8 +63,9 @@ class ControllerTest {
         String rygemateriale = "Tørv";
         String kommentar = null;
 
+
         //Assert
-        Destillering destillering = Controller.createDestillering(startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
+        Destillering destillering = Controller.createDestillering(destilleringId, startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
 
         //Act
         assertNotNull(destillering);
@@ -80,14 +82,10 @@ class ControllerTest {
 
     @Test
     @Order(4)
-    void createNullDestillation(){}
-
-    @Test
-    @Order(5)
-    void createWrongDateDestillation(){
-        //Arrange
-        LocalDate startdato = LocalDate.of(2023, 4, 15);
-        LocalDate slutdato = LocalDate.of(2023, 4, 14);
+    void createNullDestillation(){
+        String destilleringId = "Destillering1";
+        LocalDate startdato = null;
+        LocalDate slutdato = null;
         String maltbatch = "20";
         String kornsort = "byg";
         String medarbejder = "Anders";
@@ -96,19 +94,15 @@ class ControllerTest {
         String rygemateriale = "Tørv";
         String kommentar = null;
 
-        //Assert
-        Destillering destillering = Controller.createDestillering(startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
+        Destillering destillering = Controller.createDestillering(destilleringId, startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
 
-        //Act
-        assertNotNull(destillering);
-        assertEquals(startdato, destillering.getStartdato());
-        assertEquals(slutdato, destillering.getSlutdato());
-        assertEquals(maltbatch, destillering.getMaltbatch());
-        assertEquals(kornsort, destillering.getKornsort());
-        assertEquals(medarbejder, destillering.getMedarbejder());
-        assertEquals(mængdevæske, destillering.getMængdevæske(), 0.001);
-        assertEquals(alkoholprocent, destillering.getAlkoholprocent(), 0.001);
-        assertEquals(rygemateriale, destillering.getRygemateriale());
-        assertNull(destillering.getKommentar());
+        assertNull(destillering);
     }
- }
+
+
+    @Test
+    @Order(5)
+    void createWrongDateDestillation(){
+
+    }
+}
