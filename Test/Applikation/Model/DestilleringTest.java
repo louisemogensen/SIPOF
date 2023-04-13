@@ -23,7 +23,7 @@ class DestilleringTest {
         destillering.fordelVæske(fad);
 
         // Assert
-        assertEquals(0, fad.getNuværendeVolume()); //Tjekker om væskemængden på fadet er 0
+        assertEquals(0, fad.getNuværendeVolume()); //Tjekker om væskemængden på fadet er 0.
         assertTrue(destillering.getMængdevæske() < fad.getMaxVolume()); //Undersøger, om betingelsen er opfyldt
 
         //Vi oplever her en fejl, hvor testen siger, at den nuværende volume er det samme som maxvolumen, hvilket ikke er korrekt. Vi kan ikke finde vores fejl.
