@@ -13,12 +13,14 @@ import java.util.List;
 
 public class Controller {
 
-    public static Fad createFad(String fadtype, int fadnummer, String fadleverandør, double maxVolume) {
-        Fad fad = new Fad(fadtype, fadnummer, fadleverandør, maxVolume);
-        Storage.addFad(fad);
-        return fad;
+    public static Fad createFad(String fadtype, Integer fadnummer, String fadleverandør, Double maxVolume) {
+       if (fadnummer == null || maxVolume == null) {
+            throw new IllegalArgumentException("Udfyld alle felter");
+        }
+            Fad fad = new Fad(fadtype, fadnummer, fadleverandør, maxVolume);
+            Storage.addFad(fad);
+            return fad;
     }
-
     public static void deleteFad(Fad fad) {
         Storage.removeFad(fad);
     }
@@ -77,6 +79,13 @@ public class Controller {
 
     //------------------------------------------------------------------------------
     public static Destillering createDestillering(String destilleringID, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+        if (startdato == null || slutdato == null) {
+            throw new IllegalArgumentException("Start- eller slutdato mangler");
+        }
+
+        if (startdato.isAfter(slutdato)) {
+            throw new IllegalArgumentException("Start og slutdato er i forkert rækkefølge");
+        }
         Destillering destillering = new Destillering(destilleringID, startdato, slutdato, maltbatch, kornsort,medarbejder,mængdevæske, alkoholprocent, rygemateriale, kommentar);
         Storage.addDestillering(destillering);
         return destillering;
@@ -121,7 +130,7 @@ public class Controller {
         Plads plads3 = Controller.createPlads(1, 3, lager2);
         Plads plads4 = Controller.createPlads(1, 4, lager2);
 
-        Fad fad = createFad("Cherry", 1, "Himmeriggården", 23487);
+        Fad fad = createFad("Cherry", 1, "Himmeriggården", 23.487);
 
         fad.setPlads(plads1);
 
