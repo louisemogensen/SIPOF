@@ -9,80 +9,56 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DestilleringTest {
 
+    private Fad fad;
     private Destillering destillering;
-
-
-
 
     @Test
     void TC1_fordelVæske() {
 
         // Arrange
-        Fad fad = new Fad("Cherry,", 2, "Morten", 50);
-        Destillering destillering1 = new Destillering("Destillering 4", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 5, 50, "Rygemateriale", "Det er den første efter påske");
+        fad = new Fad("Cherry", 2, "Morten", 1200);
+        destillering = new Destillering("Destillering 2", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 50, 50, "Rygematriale", "Kommentar: Første destillering efter påske");
 
         // Act
-        destillering1.fordelVæske(fad);
+        destillering.fordelVæske(fad);
 
         // Assert
-        assertEquals(5, fad.getNuværendeVolume());
-        assertEquals(0, destillering1.getMængdevæske());
+        assertEquals(0, fad.getNuværendeVolume()); //Tjekker om væskemængden på fadet er 0
+        assertTrue(destillering.getMængdevæske() < fad.getMaxVolume()); //Undersøger, om betingelsen er opfyldt
+
+        //Vi oplever her en fejl, hvor testen siger, at den nuværende volume er det samme som maxvolumen, hvilket ikke er korrekt. Vi kan ikke finde vores fejl.
+
     }
+
 
     @Test
     void TC2_fordelVæske() {
 
         // Arrange
-        Fad fad = new Fad("Cherry,", 2, "Morten", 15);
-        Destillering destillering1 = new Destillering("Destillering 4", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 10, 50, "Rygemateriale", "Det er den første efter påske");
+        fad = new Fad("Cherry", 2, "Morten", 100);
+        destillering = new Destillering("Destillering 2", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 0, 50, "Rygematriale", "Kommentar: Første destillering efter påske");
 
+        // Act & Assert
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            fad.setNuværendeVolume(50);
+            destillering.fordelVæske(fad);
+        });
+        assertEquals(exception.getMessage(), "Du kan kun fylde på et tomt fad");
 
-        // Act
-        destillering1.fordelVæske(fad);
-
-        // Assert
-        //fail("Der er for lidt væske til at påfylde fadet");
     }
 
     @Test
     void TC3_fordelVæske() {
 
         // Arrange
-        Fad fad = new Fad("Cherry,", 2, "Morten", 100);
-        Destillering destillering1 = new Destillering("Destillering 4", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 10, 50, "Rygemateriale", "Det er den første efter påske");
+        fad = new Fad("Cherry", 2, "Morten", 100);
+        destillering = new Destillering("Destillering 2", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 200, 50, "Rygematriale", "Kommentar: Første destillering efter påske");
 
-        // Act
-        destillering1.fordelVæske(fad);
-        assertEquals(10, fad.getNuværendeVolume() + destillering1.getMængdevæske());
-
-        Fad fad2 = new Fad("Cherry,", 2, "Morten", 100);
-        assertThrows(RuntimeException.class, () -> {
-            destillering1.fordelVæske(fad2);
+        // Act & Assert
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            destillering.fordelVæske(fad);
         });
-
-        // Assert
-        assertEquals(10, fad.getNuværendeVolume());
-    }
-
-    @Test
-    void TC4_fordelVæske() {
-
-        // Arrange
-        Fad fad = new Fad("Cherry,", 2, "Morten", 5);
-
-        fad.setNuværendeVolume(5);
-
-        destillering = new Destillering("Destillering 4", LocalDate.of(2023, 04, 13), LocalDate.of(2023, 04, 14), "Maltbatch", "Byg", "Mette", 10, 50, "Rygemateriale", "Det er den første efter påske");
-
-        // Act
-        destillering.fordelVæske(fad);
-
-        // Assert
-       // fail("Fadet er ikke tomt");
-
+        assertEquals(exception.getMessage(), "Der er ikke plads til mængden af væske på fadet");
 
     }
-
-
-
-    }
+}
