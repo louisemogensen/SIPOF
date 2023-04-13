@@ -137,21 +137,11 @@ public class Destillering {
         }
     }
 
-    public void fordelVæske() {
-
-        double volumeFyldtPå = 0;
-
-        for (Fad fad : fade) {
-
-            if (volumeFyldtPå < (mængdevæske - fad.getMaxVolume())) {
-                volumeFyldtPå += fad.getMaxVolume();
-                fad.setNuværendeVolume(fad.getMaxVolume());
-
-            } else if (mængdevæske != volumeFyldtPå) {
-                double sidstePåfyldning = mængdevæske - volumeFyldtPå;
-                volumeFyldtPå += sidstePåfyldning;
-                fad.setNuværendeVolume(sidstePåfyldning);
-            }
+    public void fordelVæske(Fad fad) {
+//hej
+        if(fad.getNuværendeVolume() == 0) {
+            fad.setNuværendeVolume(fad.getMaxVolume());
+            this.setMængdevæske(this.getMængdevæske() - fad.getNuværendeVolume());
         }
 
     }
