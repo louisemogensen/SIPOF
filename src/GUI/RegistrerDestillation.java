@@ -57,8 +57,6 @@ public class RegistrerDestillation extends GridPane{
         dtpStartDato = new DatePicker();
         this.add(dtpStartDato, 2, 2);
 
-        Label lblAngivDato = new Label("Dato angives som dd-mm-åååå");
-        this.add(lblAngivDato, 3, 2);
 
         Label lblSlutDato = new Label("Slutdato:");
         this.add(lblSlutDato, 1, 3);

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
+    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="RegistrerDestillation">
+      <change afterPath="$PROJECT_DIR$/Test/Applikation/Controller/ControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/OpretFad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/OpretFad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RegistrerDestillation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +53,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Applikation.Controller" />
+      <recent name="GUI" />
       <recent name="Applikation.Model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.App" />
       <module name="SIPOF" />
@@ -71,9 +72,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIPOF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Applikation.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Applikation.Controller" />
+      <option name="MAIN_CLASS_NAME" value="Applikation.Controller.ControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.createDestillation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIPOF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Applikation.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Applikation.Controller" />
+      <option name="MAIN_CLASS_NAME" value="Applikation.Controller.ControllerTest" />
+      <option name="METHOD_NAME" value="createDestillation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.createWrongDateDestillation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIPOF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Applikation.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Applikation.Controller" />
+      <option name="MAIN_CLASS_NAME" value="Applikation.Controller.ControllerTest" />
+      <option name="METHOD_NAME" value="createWrongDateDestillation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.testCreateFadMedNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIPOF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Applikation.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Applikation.Controller" />
+      <option name="MAIN_CLASS_NAME" value="Applikation.Controller.ControllerTest" />
+      <option name="METHOD_NAME" value="testCreateFadMedNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.ControllerTest.createWrongDateDestillation" />
+        <item itemvalue="JUnit.ControllerTest" />
+        <item itemvalue="JUnit.ControllerTest.createDestillation" />
+        <item itemvalue="JUnit.ControllerTest.testCreateFadMedNull" />
       </list>
     </recent_temporary>
   </component>
@@ -104,6 +172,12 @@
     <MESSAGE value="Ændringer i samtlige klasser (30/3 kl. 23.25 rip)" />
     <MESSAGE value="Ændringer i OpretFad" />
     <MESSAGE value="Ændringer i OpretFad og RegistrerDestillation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i OpretFad og RegistrerDestillation" />
+    <MESSAGE value="RegistrerDestillation" />
+    <option name="LAST_COMMIT_MESSAGE" value="RegistrerDestillation" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SIPOF$OpretFad.ic" NAME="OpretFad Coverage Results" MODIFIED="1680209019999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>GUI.*</FILTER>
+    </SUITE>
   </component>
 </project>
