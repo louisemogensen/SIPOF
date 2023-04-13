@@ -140,6 +140,9 @@ public class Destillering {
     public void fordelVæske(Fad fad) {
 
         if(fad.getNuværendeVolume() == 0) {
+            if (this.mængdevæske >= fad.getMaxVolume()) {
+                throw new RuntimeException("Der er ikke noget væske til at fylde fadet");
+            }
             fad.setNuværendeVolume(fad.getMaxVolume());
             this.setMængdevæske(this.getMængdevæske() - fad.getNuværendeVolume());
         }
