@@ -13,7 +13,7 @@ class ControllerTest {
 
     @Test
     @Order(1)
-    void createFad() {
+    void TC1_createFad() {
         // Arrange
         String tidligereIndhold = "Rom";
         int fadnummer = 1;
@@ -33,7 +33,7 @@ class ControllerTest {
 
     @Test
     @Order(2)
-    public void testCreateFadNull() {
+    public void TC2_testCreateFadNull() {
         // Arrange
         String tidligereIndhold = "Rom";
         Integer fadnummer = null;
@@ -50,7 +50,7 @@ class ControllerTest {
 
     @Test
     @Order(3)
-    void createDestillation() {
+    void TC1_createDestillation() {
         //Arrange
         String destilleringId = "Destillering1";
         LocalDate startdato = LocalDate.of(2023, 4, 14);
@@ -101,8 +101,22 @@ class ControllerTest {
 
 
     @Test
-    @Order(5)
-    void createWrongDateDestillation(){
+    public void testCreateDestillationWithInvalidDates() {
+        // Arrange
+        String destilleringId = "Destillering1";
+        LocalDate startdato = LocalDate.of(2023, 04, 16);
+        LocalDate slutdato = LocalDate.of(2023, 04, 15);
+        String maltbatch = "20";
+        String kornsort = "byg";
+        String medarbejder = "Anders";
+        double mængdevæske = 50;
+        double alkoholprocent = 52.2;
+        String rygemateriale = "Tørv";
+        String kommentar = null;
 
+        // Act and Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            Controller.createDestillering(destilleringId, startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
+        });
     }
 }

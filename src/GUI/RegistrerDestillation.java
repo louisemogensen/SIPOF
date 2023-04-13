@@ -102,6 +102,10 @@ public class RegistrerDestillation extends GridPane{
 
     private void registrerDestillationAction(GridPane pane) {
 
+        if (dtpStartDato.getValue().isAfter(dtpSlutDato.getValue())) {
+            throw new IllegalArgumentException("Start date cannot be after end date");
+        }
+
         if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && (!dtpStartDato.getValue().isAfter(dtpSlutDato.getValue())) && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
             Controller.createDestillering(txfDestillat.getText().trim(), dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
 
