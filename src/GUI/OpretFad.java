@@ -30,6 +30,8 @@ public class OpretFad extends GridPane {
     //Buttons
     private Button btnOpretFad = new Button("Opret fad");
 
+    private Label lblError = new Label();
+
 
     //Pane
     public OpretFad() {
@@ -76,6 +78,7 @@ public class OpretFad extends GridPane {
 
         //Tilslutter metode til button
         btnOpretFad.setOnAction(event -> this.opretFadAction(this));
+        this.add(lblError, 1, 13);
         System.out.println(Storage.getFade());
 
     }
@@ -92,32 +95,30 @@ public class OpretFad extends GridPane {
         System.out.println("Fade: " + Storage.getFade());
 
         if (!txfTidligereIndhold.getText().isEmpty() && !txfLeverandør.getText().isEmpty() && !txfFadnummer.getText().isEmpty() && lstReol.getValue() != null) {
-            // Fad nytFad = new Fad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
-            System.out.println(Storage.getFade());
-            Controller.createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
-            //Fjerner den valgte plads fra ComboBox
-            Plads valgtPlads = lstReol.getValue();
-            lstReol.getItems().remove(valgtPlads);
+            try {
+                Controller.createFad(txfTidligereIndhold.getText().trim(), Integer.parseInt(txfFadnummer.getText().trim()), txfLeverandør.getText().trim(), Double.parseDouble(txfMaxVolume.getText().trim()));
 
-            clearFields();
-            lstReol.getSelectionModel().clearSelection();
+                //Fjerner den valgte plads fra ComboBox
+                Plads valgtPlads = lstReol.getValue();
+                lstReol.getItems().remove(valgtPlads);
+                clearFields();
+                lstReol.getSelectionModel().clearSelection();
+                updateControls();
 
-            Label lblFadRegistreret = new Label("Fad registreret");
-            pane.add(lblFadRegistreret, 1, 13);
-            updateControls();
+                lblError.setText("Fad registreret");
+
+            } catch(IllegalArgumentException i) {
+                lblError.setText(i.getMessage());
+            }
 
         } else {
-            Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
-            pane.add(lblUdfyldAlleFelter, 1, 13);
-
+            lblError.setText("Alle felter skal udfyldes");
         }
-
     }
 
     public void updateControls() {
         lvwFade.getItems().setAll(Controller.getFade());
     }
-
 
 }

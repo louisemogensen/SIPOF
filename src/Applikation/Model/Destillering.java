@@ -138,7 +138,7 @@ public class Destillering {
     }
 
     public void fordelVæske(Fad fad) {
-//hej
+
         if(fad.getNuværendeVolume() == 0) {
             fad.setNuværendeVolume(fad.getMaxVolume());
             this.setMængdevæske(this.getMængdevæske() - fad.getNuværendeVolume());

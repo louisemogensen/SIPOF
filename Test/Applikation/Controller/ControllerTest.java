@@ -39,13 +39,11 @@ class ControllerTest {
         Integer fadnummer = null;
         String fadleverandør = "Bent Brandt";
         Double maxVolume = null;
-        Controller controller = new Controller();
 
-        // Act
-        Fad fad = controller.createFad(tidligereIndhold, fadnummer, fadleverandør, maxVolume);
-
-        // Assert
-        assertNull(fad);
+        //Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            Controller.createFad(tidligereIndhold, fadnummer, fadleverandør, maxVolume);
+        });
     }
 
     @Test
@@ -62,7 +60,6 @@ class ControllerTest {
         double alkoholprocent = 52.2;
         String rygemateriale = "Tørv";
         String kommentar = null;
-
 
         //Assert
         Destillering destillering = Controller.createDestillering(destilleringId, startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
@@ -83,6 +80,7 @@ class ControllerTest {
     @Test
     @Order(4)
     void createNullDestillation(){
+        // Arrange
         String destilleringId = "Destillering1";
         LocalDate startdato = null;
         LocalDate slutdato = null;
@@ -94,14 +92,14 @@ class ControllerTest {
         String rygemateriale = "Tørv";
         String kommentar = null;
 
-        Destillering destillering = Controller.createDestillering(destilleringId, startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
-
-        assertNull(destillering);
+        // Act and Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            Controller.createDestillering(destilleringId, startdato, slutdato, maltbatch, kornsort, medarbejder, mængdevæske, alkoholprocent, rygemateriale, kommentar);
+        });
     }
 
-
     @Test
-    public void testCreateDestillationWithInvalidDates() {
+    public void testCreateDestillationForkertDato() {
         // Arrange
         String destilleringId = "Destillering1";
         LocalDate startdato = LocalDate.of(2023, 04, 16);

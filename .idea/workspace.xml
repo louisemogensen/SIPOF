@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/Applikation/Model/PladsTest.java" afterDir="false" />
+    <list default="true" id="221a44c5-5342-4c39-bef7-ffb8e6e8e3b4" name="Changes" comment="RegistrerDestillation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Controller/ControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/GUI/OpretFadTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/GUI/RegistrerDestillationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Model/DestilleringTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Model/Fad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Applikation/Controller/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Applikation/Controller/ControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Applikation/Controller/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,8 +153,7 @@
     <MESSAGE value="Ændringer i samtlige klasser (30/3 kl. 23.25 rip)" />
     <MESSAGE value="Ændringer i OpretFad" />
     <MESSAGE value="Ændringer i OpretFad og RegistrerDestillation" />
-    <MESSAGE value="RegistrerDestillation" />
-    <option name="LAST_COMMIT_MESSAGE" value="RegistrerDestillation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændringer i OpretFad og RegistrerDestillation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SIPOF$OpretFad.ic" NAME="OpretFad Coverage Results" MODIFIED="1680209019999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

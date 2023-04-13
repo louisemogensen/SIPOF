@@ -29,6 +29,8 @@ public class RegistrerDestillation extends GridPane{
     private DatePicker dtpSlutDato;
     private Button btnRegistrer = new Button("Registrer");
 
+    private Label lblError = new Label();
+
     //this
     public RegistrerDestillation() {
         // show or hide grid lines
@@ -92,6 +94,7 @@ public class RegistrerDestillation extends GridPane{
         txaKommentar.setEditable(true);
 
         this.add(btnRegistrer, 4,20);
+        this.add(lblError, 1, 20);
         //Tilslutter metode til button
         btnRegistrer.setOnAction(event -> this.registrerDestillationAction(this));
     }
@@ -102,21 +105,19 @@ public class RegistrerDestillation extends GridPane{
 
     private void registrerDestillationAction(GridPane pane) {
 
-        if (dtpStartDato.getValue().isAfter(dtpSlutDato.getValue())) {
-            throw new IllegalArgumentException("Start date cannot be after end date");
-        }
+        if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
 
-        if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && (!dtpStartDato.getValue().isAfter(dtpSlutDato.getValue())) && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
-            Controller.createDestillering(txfDestillat.getText().trim(), dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
+            try {
+                Controller.createDestillering(txfDestillat.getText().trim(), dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
+                clearFields();
+                lblError.setText("Destillat registreret");
 
-            clearFields();
-
-            Label lblFadRegistreret = new Label("Destillat registreret");
-            pane.add(lblFadRegistreret, 1, 20);
+            } catch (IllegalArgumentException e) {
+                lblError.setText(e.getMessage());
+            }
 
         } else {
-            Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
-            pane.add(lblUdfyldAlleFelter, 1, 20);
+            lblError.setText("Alle felter skal udfyldes");
 
         }
     }
