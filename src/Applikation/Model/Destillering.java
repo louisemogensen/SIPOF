@@ -1,12 +1,11 @@
 package Applikation.Model;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Destillering {
 
-    private String DestilleringID;
+    private String destilleringID;
     private LocalDate startdato;
     private LocalDate slutdato;
     private String maltbatch;
@@ -21,7 +20,7 @@ public class Destillering {
     private ArrayList<Fad> fade = new ArrayList<>();
 
     public Destillering(String DestilleringID, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
-        this.DestilleringID = DestilleringID;
+        this.destilleringID = DestilleringID;
         this.startdato = startdato;
         this.slutdato = slutdato;
         this.maltbatch = maltbatch;
@@ -34,11 +33,11 @@ public class Destillering {
     }
 
     public String getDestilleringID() {
-        return DestilleringID;
+        return destilleringID;
     }
 
     public void setDestilleringID(String destilleringID) {
-        DestilleringID = destilleringID;
+        this.destilleringID = destilleringID;
     }
 
     public LocalDate getStartdato() {
@@ -124,38 +123,40 @@ public class Destillering {
     }
 
     public void addFad(Fad fad) {
-        if(!fade.contains(fad)) {
+        if (!fade.contains(fad)) {
             fade.add(fad);
             fad.setDestillering(this);
         }
     }
 
     public void removeFad(Fad fad) {
-        if(fade.contains(fad)) {
+        if (fade.contains(fad)) {
             fade.remove(fad);
             fad.setDestillering(null);
         }
     }
 
     public void fordelVæske(Fad fad) {
+        double væskePåFad = fad.getNuværendeVolume() + mængdevæske;
 
-        if(fad.getNuværendeVolume() == 0) {
+        if (væskePåFad < fad.getMaxVolume()) {
 
-            if (this.mængdevæske > fad.getMaxVolume()) {
-                throw new RuntimeException("Der er ikke plads på fadet");
 
-            }
-
-            fad.setNuværendeVolume(fad.getMaxVolume());
+            fad.setNuværendeVolume(væskePåFad);
             this.setMængdevæske(this.getMængdevæske() - fad.getNuværendeVolume());
         }
+        if (væskePåFad > fad.getMaxVolume()) {
+            throw new RuntimeException("Der er ikke plads på fadet");
 
-        throw new RuntimeException("Du kan kun fylde på et tomt fad");
+        } else {
+            throw new RuntimeException("Du kan kun fylde på et tomt fad");
+        }
+
 
     }
 
     @Override
     public String toString() {
-        return "DestilleringsID: " + DestilleringID;
+        return "DestilleringsID: " + destilleringID;
     }
 }
