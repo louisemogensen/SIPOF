@@ -79,7 +79,7 @@ class ControllerTest {
 
     @Test
     @Order(4)
-    void createNullDestillation(){
+    void TC2_createNullDestillation(){
         // Arrange
         String destilleringId = "Destillering1";
         LocalDate startdato = null;
@@ -99,7 +99,7 @@ class ControllerTest {
     }
 
     @Test
-    public void testCreateDestillationForkertDato() {
+    public void TC3_testCreateDestillationForkertDato() {
         // Arrange
         String destilleringId = "Destillering1";
         LocalDate startdato = LocalDate.of(2023, 04, 16);
