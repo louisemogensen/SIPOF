@@ -74,7 +74,16 @@ public class Fad {
     }
 
     public void setDestillering(Destillering destillering) {
-        this.destillering = destillering;
+        if(this.destillering != destillering) {
+            Destillering oldDestillering = this.destillering;
+            if(oldDestillering != null) {
+                oldDestillering.removeFad(this);
+            }
+            this.destillering = destillering;
+            if(destillering != null) {
+                destillering.addFad(this);
+            }
+        }
     }
 
     public Plads getPlads() {
