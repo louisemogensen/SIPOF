@@ -16,8 +16,6 @@ import javafx.stage.Stage;
 public class RegistrerDestillation extends GridPane{
 
     private TextField txfDestillat;
-    private TextField txfStartDato;
-    private TextField txfSlutdato;
     private TextField txfMaltbatch;
     private TextField txfKornsort;
     private TextField txfMedarbejder;
@@ -29,9 +27,6 @@ public class RegistrerDestillation extends GridPane{
 
     private DatePicker dtpStartDato;
     private DatePicker dtpSlutDato;
-
-    private ComboBox<Fad> lstFad = new ComboBox<Fad>();
-
     private Button btnRegistrer = new Button("Registrer");
 
     //this
@@ -45,8 +40,6 @@ public class RegistrerDestillation extends GridPane{
         // set vertical gap between components
         this.setVgap(10);
 
-        Controller.initContent();
-
         Label lblDestillat = new Label("Navn på destillat:");
         this.add(lblDestillat, 1, 0);
         txfDestillat = new TextField();
@@ -56,7 +49,6 @@ public class RegistrerDestillation extends GridPane{
         this.add(lblStartDato, 1, 2);
         dtpStartDato = new DatePicker();
         this.add(dtpStartDato, 2, 2);
-
 
         Label lblSlutDato = new Label("Slutdato:");
         this.add(lblSlutDato, 1, 3);
@@ -99,7 +91,7 @@ public class RegistrerDestillation extends GridPane{
         this.add(txaKommentar, 2, 18);
         txaKommentar.setEditable(true);
 
-        this.add(btnRegistrer, 4,18);
+        this.add(btnRegistrer, 4,20);
         //Tilslutter metode til button
         btnRegistrer.setOnAction(event -> this.registrerDestillationAction(this));
     }
@@ -110,17 +102,17 @@ public class RegistrerDestillation extends GridPane{
 
     private void registrerDestillationAction(GridPane pane) {
 
-        if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && dtpStartDato.getValue().isBefore(dtpSlutDato.getValue()) && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
-            Controller.createDestillering(dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
+        if (!txfDestillat.getText().isEmpty() && dtpStartDato.getValue() != null && dtpSlutDato.getValue() != null && (!dtpStartDato.getValue().isAfter(dtpSlutDato.getValue())) && !txfMaltbatch.getText().isEmpty() && !txfKornsort.getText().isEmpty() && !txfMedarbejder.getText().isEmpty() && !txfVæskemængde.getText().isEmpty() && !txfAlkoholprocent.getText().isEmpty()) {
+            Controller.createDestillering(txfDestillat.getText().trim(), dtpStartDato.getValue(), dtpSlutDato.getValue(), txfMaltbatch.getText().trim(), txfKornsort.getText().trim(), txfMedarbejder.getText().trim(), Double.parseDouble(txfVæskemængde.getText().trim()), Double.parseDouble(txfAlkoholprocent.getText().trim()), txfRygemateriale.getText().trim(), txaKommentar.getText().trim());
 
             clearFields();
 
             Label lblFadRegistreret = new Label("Destillat registreret");
-            pane.add(lblFadRegistreret, 1, 13);
+            pane.add(lblFadRegistreret, 1, 20);
 
         } else {
             Label lblUdfyldAlleFelter = new Label("Alle felter skal udfyldes");
-            pane.add(lblUdfyldAlleFelter, 1, 11);
+            pane.add(lblUdfyldAlleFelter, 1, 20);
 
         }
     }

@@ -1,15 +1,12 @@
-package Model;
+package GUI;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DestilleringTest {
+class RegistrerDestillationTest {
 
     @Test
-    void fordelVæske() {
-
-
-
+    void updateControls() {
     }
 }

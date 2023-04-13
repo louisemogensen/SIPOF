@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Destillering {
 
+    private String DestilleringID;
     private LocalDate startdato;
     private LocalDate slutdato;
     private String maltbatch;
@@ -19,7 +20,8 @@ public class Destillering {
     // Linkattribut
     private ArrayList<Fad> fade = new ArrayList<>();
 
-    public Destillering(LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+    public Destillering(String DestilleringID, LocalDate startdato, LocalDate slutdato, String maltbatch, String kornsort, String medarbejder, double mængdevæske, double alkoholprocent, String rygemateriale, String kommentar) {
+        this.DestilleringID = DestilleringID;
         this.startdato = startdato;
         this.slutdato = slutdato;
         this.maltbatch = maltbatch;
@@ -29,6 +31,14 @@ public class Destillering {
         this.alkoholprocent = alkoholprocent;
         this.rygemateriale = rygemateriale;
         this.kommentar = kommentar;
+    }
+
+    public String getDestilleringID() {
+        return DestilleringID;
+    }
+
+    public void setDestilleringID(String destilleringID) {
+        DestilleringID = destilleringID;
     }
 
     public LocalDate getStartdato() {
@@ -146,6 +156,8 @@ public class Destillering {
 
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "DestilleringsID: " + DestilleringID;
+    }
 }
